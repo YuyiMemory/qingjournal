@@ -1,5 +1,5 @@
 // This URL is public. Passwords and server signing keys must never be bundled here.
-const endpoint = 'https://script.google.com/macros/s/AKfycbz9irIdcJW_BXDfq4ZIIUzDcV6edTOvysvMZwV1YkJixC8daBia5hAYMHFk5GK4ASJBIA/exec';
+const endpoint = 'https://script.google.com/macros/s/AKfycbwknThqRHIIj-HKupYL06YeV95bXlcGqv-isvzW9KINR9sQTKI-p5ZvO27Pj8HWj45fzA/exec';
 type Envelope<T> = { status: number; data: T & { error?: string } };
 export class ApiError extends Error { constructor(message: string, public status: number) { super(message); } }
 let token = '';
