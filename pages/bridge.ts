@@ -23,7 +23,7 @@ function connect() {
       reject(new Error('尚未連上 Google。請確認已更新 Apps Script 部署，或稍後再試。'));
     }, 25000);
     function receive(event: MessageEvent) {
-      if (!/^https:\/\/[a-z0-9-]+\.script\.googleusercontent\.com$/.test(event.origin) && event.origin !== 'https://script.google.com') return;
+      if (!/^https:\/\/(?:[a-z0-9-]+-)?script\.googleusercontent\.com$/.test(event.origin) && event.origin !== 'https://script.google.com') return;
       if (!event.data || event.data.channel !== channel || !event.source) return;
       if (event.data.type === 'cottage-ready' && !bridgeWindow) {
         bridgeWindow = event.source as Window;
