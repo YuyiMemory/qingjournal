@@ -13,11 +13,11 @@ GitHub 只保存程式與公開插畫，不保存日記或密碼。Google Apps S
    | 屬性 | 值 |
    | --- | --- |
    | `COTTAGE_SHEET_ID` | 原本試算表網址 `/d/` 與 `/edit` 之間的 ID |
-   | `COTTAGE_READER_PASSWORD` | 分享給讀者的密碼，16–256 字元 |
-   | `COTTAGE_OWNER_PASSWORD` | 只有主人知道的另一組密碼，16–256 字元 |
+   | `COTTAGE_READER_PASSWORD` | 分享給讀者的密碼，4–256 字元 |
+   | `COTTAGE_OWNER_PASSWORD` | 只有主人知道的另一組密碼，4–256 字元 |
 
-   建議使用密碼管理器產生兩組不同的隨機密碼；不要使用人名、生日或重複使用其他帳號密碼。
-4. 在編輯器執行 `setupCottage_` 並親自完成 Google 授權。它只核對三個既有分頁及初始化簽章密鑰、作者 ID，不覆蓋日記內容。
+   允許 4 字元，但短密碼較容易被猜中；建議使用更長的隨機密碼，不要使用人名、生日或重複使用其他帳號密碼。仍保留每個角色五分鐘最多十次錯誤嘗試的限制。
+4. 在編輯器暫時把函式宣告 `function setupCottage_()` 改成 `function setupCottage()`，儲存後在選單選取並執行 `setupCottage`，親自完成 Google 授權。執行完畢後，**立即把名稱改回 `setupCottage_` 並儲存，再部署**，避免初始化函式被網頁呼叫。它只核對三個既有分頁及初始化簽章密鑰、作者 ID，不覆蓋日記內容。
 5. 部署 → 管理部署作業 → 編輯 → 版本選「新版本」→ 部署。沿用原 `/exec` 網址；執行身分為「我」，存取對象為「所有人」。不要把 Google 試算表設為公開。
 6. 這份資訊清單啟用 Sheets 進階服務。若使用自訂 Google Cloud 專案，亦需在該專案啟用 Google Sheets API。
 7. 在 GitHub Pages 實測：無密碼不能讀取；閱讀密碼不能書寫；主人可寫入一篇測試日記，重新登入後仍可讀取。

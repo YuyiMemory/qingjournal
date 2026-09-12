@@ -2,7 +2,7 @@ const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/st
 const source=fs.readFileSync(__dirname+'/Pages.gs','utf8');
 const ast=require('acorn').parse(source,{ecmaVersion:2017});
 assert.deepEqual(ast.body.filter(n=>n.type==='FunctionDeclaration'&&!n.id.name.endsWith('_')).map(n=>n.id.name).sort(),['cottageRequest','doGet','doPost']);
-const props={COTTAGE_READER_PASSWORD:'reader-test-password',COTTAGE_OWNER_PASSWORD:'owner-test-password',COTTAGE_BRIDGE_SECRET:'test-signing-key',COTTAGE_SHEET_ID:'test-sheet',COTTAGE_OWNER_ID:'test-owner'};
+const props={COTTAGE_READER_PASSWORD:'r7Q!',COTTAGE_OWNER_PASSWORD:'o9Z?',COTTAGE_BRIDGE_SECRET:'test-signing-key',COTTAGE_SHEET_ID:'test-sheet',COTTAGE_OWNER_ID:'test-owner'};
 const tables={diaries:[['one','test-owner','2026-09-12','9 月 12 日','星期六','private test body','','','public',1,'2026-09-12T00:00:00Z','2026-09-12T00:00:00Z']],comments:[],hearts:[]};
 let sheetReads=0,writes=[];
 const context=vm.createContext({

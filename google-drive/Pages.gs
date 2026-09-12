@@ -8,7 +8,7 @@ const PAGES_TABS = {diaries:'日記小屋_日記',comments:'日記小屋_留言'
 function setupCottage_() {
   const p=PropertiesService.getScriptProperties();
   const reader=p.getProperty('COTTAGE_READER_PASSWORD'), owner=p.getProperty('COTTAGE_OWNER_PASSWORD');
-  if(!reader||!owner||reader.length<16||owner.length<16||reader.length>256||owner.length>256||reader===owner) throw new Error('請設定兩組不同、各 16–256 字元的密碼。');
+  if(!reader||!owner||reader.length<4||owner.length<4||reader.length>256||owner.length>256||reader===owner) throw new Error('請設定兩組不同、各 4–256 字元的密碼。');
   const book=SpreadsheetApp.openById(p.getProperty('COTTAGE_SHEET_ID'));
   Object.keys(PAGES_TABS).forEach(k=>{if(!book.getSheetByName(PAGES_TABS[k]))throw new Error('找不到分頁：'+PAGES_TABS[k]);});
   if(!p.getProperty('COTTAGE_BRIDGE_SECRET'))p.setProperty('COTTAGE_BRIDGE_SECRET',Utilities.getUuid()+Utilities.getUuid());
@@ -47,7 +47,7 @@ function same_(a,b){if(typeof a!=='string'||typeof b!=='string'||a.length!==b.le
 function config_(){
   const p=PropertiesService.getScriptProperties();
   const reader=p.getProperty('COTTAGE_READER_PASSWORD'),owner=p.getProperty('COTTAGE_OWNER_PASSWORD'),secret=p.getProperty('COTTAGE_BRIDGE_SECRET');
-  if(!reader||!owner||reader.length<16||owner.length<16||reader===owner||!secret||!p.getProperty('COTTAGE_OWNER_ID'))fail_('主人尚未完成 Google 端密碼設定。',503);
+  if(!reader||!owner||reader.length<4||owner.length<4||reader.length>256||owner.length>256||reader===owner||!secret||!p.getProperty('COTTAGE_OWNER_ID'))fail_('主人尚未完成 Google 端密碼設定。',503);
   return {p:p,reader:reader,owner:owner,key:mac_(JSON.stringify([reader,owner]),secret),sheet:p.getProperty('COTTAGE_SHEET_ID'),ownerId:p.getProperty('COTTAGE_OWNER_ID')};
 }
 function authenticate_(token,c){
