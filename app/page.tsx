@@ -16,7 +16,7 @@ export default function Home({canWrite=false,onLock=()=>{}}:{canWrite?:boolean;o
  const [writeDate,setWriteDate]=useState('2026-09-10'),[month,setMonth]=useState('2026-09');
  const [data,setData]=useState<Data>(initial),[loaded,setLoaded]=useState(false),[error,setError]=useState('');
  const [drafts,setDrafts]=useState<Record<string,string>>({}),[open,setOpen]=useState<string|null>(null);
- const [pet,setPet]=useState(''),[petVisible,setPetVisible]=useState(true),[settings,setSettings]=useState(false);
+ const [settings,setSettings]=useState(false);
  const syncTimer=useRef<ReturnType<typeof setTimeout>|null>(null),visitorId=useRef(''),journalRef=useRef<HTMLElement|null>(null);
  const current=useRef<DiaryEntry[]>([]),alive=useRef(true),saving=useRef(false),paused=useRef(false);
  const [hasDrafts,setHasDrafts]=useState(canWrite&&pendingDrafts.size>0),[saveFailed,setSaveFailed]=useState(false),[reload,setReload]=useState(0);
@@ -61,7 +61,6 @@ export default function Home({canWrite=false,onLock=()=>{}}:{canWrite?:boolean;o
  const [season,setSeason]=useState(2),[time,setTime]=useState(3),[auto,setAuto]=useState(true);
  const [query,setQuery]=useState(''),[selected,setSelected]=useState(''),[font,setFont]=useState(19);
  useEffect(()=>{if(!auto)return;const sync=()=>{const d=new Date(),h=d.getHours(),m=d.getMonth();setSeason(m>=2&&m<=4?0:m>=5&&m<=7?1:m>=8&&m<=10?2:3);setTime(h>=5&&h<11?0:h>=11&&h<14?1:h>=14&&h<18?2:3);};sync();const t=setInterval(sync,60000);return()=>clearInterval(t);},[auto]);
- useEffect(()=>{if(!pet)return;const t=setTimeout(()=>setPet(''),2200);return()=>clearTimeout(t);},[pet]);
  useEffect(()=>{
   const context=(document as Document & {modelContext?:{registerTool:(tool:object,options:object)=>void|Promise<void>}}).modelContext;
   if(!context)return;const lifecycle=new AbortController();
@@ -77,7 +76,7 @@ export default function Home({canWrite=false,onLock=()=>{}}:{canWrite?:boolean;o
  const newer=shownIndex>0?matching[shownIndex-1]:null,older=shownIndex>=0&&shownIndex<matching.length-1?matching[shownIndex+1]:null;
  function choose(entry:DiaryEntry){setSelected(entry.id);setEditId(entry.id);setMonth(entry.iso.slice(0,7));setOpen(null);requestAnimationFrame(()=>journalRef.current?.scrollIntoView({behavior:'smooth',block:'start'}));}
  return <main className={`cottage season-${season} time-${time}`}>
-  <div className={`scenery ${pet?'stir':''}`} aria-hidden="true"/><div className="lightwash" aria-hidden="true"/>
+  <div className="scenery" aria-hidden="true"/><div className="lightwash" aria-hidden="true"/>
   <div className="weather" aria-hidden="true">{Array.from({length:16},(_,i)=><i key={i} style={{left:`${i*6.2}%`,animationDelay:`${i*.7}s`,animationDuration:`${12+i%5}s`}}>{season===0?'❀':season===1?'·':season===2?'❧':'❅'}</i>)}</div>
   <header className="mobile-brand">⌂ 日記小屋 <span>留一盞燈，等你來。</span></header>
   <aside className="sidebar">
@@ -101,8 +100,7 @@ export default function Home({canWrite=false,onLock=()=>{}}:{canWrite?:boolean;o
    <footer className="journal-footer">日記、愛心與回覆存於 Google 試算表<br/>{saveState}{error&&<><p role="alert">{error}</p><button disabled={hasDrafts} onClick={()=>setReload(v=>v+1)}>重新載入</button></>}</footer>
   </section>
   <aside className="room" aria-label="陪伴小屋"><div className="room-caption"><span>{['花開的時候','微風來作客','收藏一片秋天','等一場溫柔的雪'][season]}</span><p>{['晨光輕輕落下','把陽光留給你','晚霞也慢了下來','今晚也有一盞燈'][time]}</p></div>
-   {petVisible&&<div className="pet-area"><output className={`pet-message ${pet?'show':''}`}>{pet==='pig'?'呼嚕～大豬豬蹭蹭你 ♡':pet==='panda'?'小熊貓開心地晃了晃 ♡':''}</output><button className="pet-hit pig" aria-label="摸摸大豬豬" onClick={()=>setPet('pig')}/><button className="pet-hit panda" aria-label="摸摸小熊貓" onClick={()=>setPet('panda')}/><div className="pet-label">點點我們，陪你待一會兒 ♡</div></div>}
-   <div className="scene-control"><button className="scene-toggle" onClick={()=>setSettings(!settings)} aria-expanded={settings}><span>✧ {seasons[season]} · {times[time]}</span><span>調整光景 {settings?'−':'＋'}</span></button>{settings&&<div className="settings"><label>季節<select aria-label="季節" value={season} onChange={e=>{setAuto(false);setSeason(+e.target.value);}}>{seasons.map((s,i)=><option key={s} value={i}>{s}</option>)}</select></label><label>時段<select aria-label="時段" value={time} onChange={e=>{setAuto(false);setTime(+e.target.value);}}>{times.map((s,i)=><option key={s} value={i}>{s}</option>)}</select></label><label className="check"><input type="checkbox" checked={auto} onChange={e=>setAuto(e.target.checked)}/>跟隨現在的季節與時間</label><label className="check"><input type="checkbox" checked={petVisible} onChange={e=>setPetVisible(e.target.checked)}/>開啟寵物點擊互動</label><p>光景為童話效果，不代表即時天氣。</p></div>}</div>
+   <div className="scene-control"><button className="scene-toggle" onClick={()=>setSettings(!settings)} aria-expanded={settings}><span>✧ {seasons[season]} · {times[time]}</span><span>調整光景 {settings?'−':'＋'}</span></button>{settings&&<div className="settings"><label>季節<select aria-label="季節" value={season} onChange={e=>{setAuto(false);setSeason(+e.target.value);}}>{seasons.map((s,i)=><option key={s} value={i}>{s}</option>)}</select></label><label>時段<select aria-label="時段" value={time} onChange={e=>{setAuto(false);setTime(+e.target.value);}}>{times.map((s,i)=><option key={s} value={i}>{s}</option>)}</select></label><label className="check"><input type="checkbox" checked={auto} onChange={e=>setAuto(e.target.checked)}/>跟隨現在的季節與時間</label><p>光景為童話效果，不代表即時天氣。</p></div>}</div>
   </aside>
  </main>;
 }

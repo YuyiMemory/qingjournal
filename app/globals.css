@@ -580,67 +580,6 @@ a {
   color: #968293;
   margin: 0;
 }
-.pet-area {
-  position: absolute;
-  top: 54%;
-  height: 31%;
-  width: 100%;
-}
-.pet-hit {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  border-radius: 45%;
-  transition: box-shadow 0.3s;
-}
-.pet-hit:hover {
-  box-shadow: inset 0 0 30px #fff6;
-}
-.pet-hit.pig {
-  left: 0;
-  width: 57%;
-}
-.pet-hit.panda {
-  right: 0;
-  width: 40%;
-}
-.pet-message {
-  opacity: 0;
-  position: absolute;
-  top: -25%;
-  left: 0;
-  right: 0;
-  text-align: center;
-  background: #fffaf5ed;
-  border-radius: 20px;
-  padding: 12px;
-  font-size: 14px;
-  transform: translateY(6px);
-  transition: 0.3s;
-  pointer-events: none;
-}
-.pet-message.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-.pet-label {
-  position: absolute;
-  bottom: -32px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  font-size: 12px;
-  color: #fff9f0;
-  text-shadow: 0 1px 5px #342439;
-}
-.scenery.stir {
-  animation: snuggle 0.7s ease-in-out 2;
-}
-@keyframes snuggle {
-  50% {
-    transform: scale(1.012) rotate(0.15deg);
-  }
-}
 .empty {
   text-align: center;
   padding: 70px 0;
@@ -718,12 +657,6 @@ a {
     width: 250px;
     z-index: 4;
   }
-  .pet-area {
-    left: 50%;
-    top: 39%;
-    width: 46%;
-    height: 48%;
-  }
   .scenery {
     background-position: 72% center;
   }
@@ -735,9 +668,6 @@ a {
   }
   .weather {
     width: 60%;
-  }
-  .pet-label {
-    bottom: -20px;
   }
   .room-caption p {
     font-size: 20px;
@@ -933,12 +863,6 @@ a {
     padding: 17px;
     box-shadow: 0 -5px 20px #57455233;
   }
-  .pet-area {
-    left: 35%;
-    width: 60%;
-    top: 30%;
-    height: 42%;
-  }
   .scenery {
     background-position: 75% center;
   }
@@ -948,9 +872,6 @@ a {
   }
   .journal-footer {
     padding: 25px 0;
-  }
-  .pet-label {
-    font-size: 11px;
   }
 }
 @media (max-width: 360px) {
