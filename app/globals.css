@@ -59,17 +59,29 @@ a {
   position: relative;
   isolation: isolate;
 }
-.season-2.time-0 { --autumn-image: url('/autumn-dawn.png'); }
-.season-2.time-1 { --autumn-image: url('/autumn-noon.png'); }
-.season-2.time-2 { --autumn-image: url('/autumn-afternoon.png'); }
-.season-2.time-3 { --autumn-image: url('/autumn-night.png'); }
-.cottage.season-2 .scenery,
-.cottage.season-2 .room::before {
-  background-image: var(--autumn-image);
+.season-0.time-0 { --scene-image: url('/spring-dawn.png'); }
+.season-0.time-1 { --scene-image: url('/spring-noon.png'); }
+.season-0.time-2 { --scene-image: url('/spring-afternoon.png'); }
+.season-0.time-3 { --scene-image: url('/spring-night.png'); }
+.season-1.time-0 { --scene-image: url('/summer-dawn.png'); }
+.season-1.time-1 { --scene-image: url('/summer-noon.png'); }
+.season-1.time-2 { --scene-image: url('/summer-afternoon.png'); }
+.season-1.time-3 { --scene-image: url('/summer-night.png'); }
+.season-2.time-0 { --scene-image: url('/autumn-dawn.png'); }
+.season-2.time-1 { --scene-image: url('/autumn-noon.png'); }
+.season-2.time-2 { --scene-image: url('/autumn-afternoon.png'); }
+.season-2.time-3 { --scene-image: url('/autumn-night.png'); }
+.season-3.time-0 { --scene-image: url('/winter-dawn.png'); }
+.season-3.time-1 { --scene-image: url('/winter-noon.png'); }
+.season-3.time-2 { --scene-image: url('/winter-afternoon.png'); }
+.season-3.time-3 { --scene-image: url('/winter-night.png'); }
+.cottage[class] .scenery,
+.cottage[class] .room::before {
+  background-image: var(--scene-image);
   filter: none;
 }
-.cottage.season-2 .lightwash,
-.cottage.season-2 .room::after {
+.cottage[class] .lightwash,
+.cottage[class] .room::after {
   background: none;
 }
 .scenery {
