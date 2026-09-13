@@ -813,7 +813,18 @@ a {
     margin-top: 15px;
   }
   .room-caption {
+    right: 10px;
     top: 10px;
+    width: auto;
+    max-width: calc(100% - 20px);
+  }
+  .room-caption > span,
+  .room-caption p {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .room-caption p {
     font-size: 18px;
