@@ -809,6 +809,8 @@ a {
   }
   .room {
     order: 1;
+    align-self: stretch;
+    width: 100%;
     height: 330px;
     margin-top: 15px;
   }
