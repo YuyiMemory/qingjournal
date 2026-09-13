@@ -59,6 +59,19 @@ a {
   position: relative;
   isolation: isolate;
 }
+.season-2.time-0 { --autumn-image: url('/autumn-dawn.png'); }
+.season-2.time-1 { --autumn-image: url('/autumn-noon.png'); }
+.season-2.time-2 { --autumn-image: url('/autumn-afternoon.png'); }
+.season-2.time-3 { --autumn-image: url('/autumn-night.png'); }
+.cottage.season-2 .scenery,
+.cottage.season-2 .room::before {
+  background-image: var(--autumn-image);
+  filter: none;
+}
+.cottage.season-2 .lightwash,
+.cottage.season-2 .room::after {
+  background: none;
+}
 .scenery {
   position: fixed;
   inset: 0;

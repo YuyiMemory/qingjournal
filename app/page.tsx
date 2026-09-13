@@ -5,7 +5,7 @@ import { dateLabels, localToday, RichText, type DiaryEntry } from './diary';
 import { api } from '../pages/bridge';
 
 const seasons = ['春天','夏天','秋天','冬天'];
-const times = ['清晨','白天','黃昏','夜晚'];
+const times = ['清晨','中午','下午','晚上'];
 type Data = { likes: string[]; comments: Record<string, { text:string; date:string }[]> };
 const initial:Data={likes:[],comments:{}};
 // Private data and unfinished drafts stay in memory, never in browser disk caches.
@@ -60,7 +60,7 @@ export default function Home({canWrite=false,onLock=()=>{}}:{canWrite?:boolean;o
  const firstWeekday=new Date(year,monthNumber-1,1).getDay(),daysInMonth=new Date(year,monthNumber,0).getDate();
  const [season,setSeason]=useState(2),[time,setTime]=useState(3),[auto,setAuto]=useState(true);
  const [query,setQuery]=useState(''),[selected,setSelected]=useState(''),[font,setFont]=useState(19);
- useEffect(()=>{if(!auto)return;const sync=()=>{const d=new Date(),h=d.getHours(),m=d.getMonth();setSeason(m>=2&&m<=4?0:m>=5&&m<=7?1:m>=8&&m<=10?2:3);setTime(h>=5&&h<9?0:h>=9&&h<16?1:h>=16&&h<19?2:3);};sync();const t=setInterval(sync,60000);return()=>clearInterval(t);},[auto]);
+ useEffect(()=>{if(!auto)return;const sync=()=>{const d=new Date(),h=d.getHours(),m=d.getMonth();setSeason(m>=2&&m<=4?0:m>=5&&m<=7?1:m>=8&&m<=10?2:3);setTime(h>=5&&h<11?0:h>=11&&h<14?1:h>=14&&h<18?2:3);};sync();const t=setInterval(sync,60000);return()=>clearInterval(t);},[auto]);
  useEffect(()=>{if(!pet)return;const t=setTimeout(()=>setPet(''),2200);return()=>clearTimeout(t);},[pet]);
  useEffect(()=>{
   const context=(document as Document & {modelContext?:{registerTool:(tool:object,options:object)=>void|Promise<void>}}).modelContext;
