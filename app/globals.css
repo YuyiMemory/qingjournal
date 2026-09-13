@@ -813,6 +813,13 @@ a {
     width: 100%;
     height: 330px;
     margin-top: 15px;
+    overflow: hidden;
+    border: 1px solid #ffffff80;
+    border-radius: 16px;
+    background:
+      linear-gradient(#34243c12, #34243c2e),
+      url('/cottage.png') 75% center/cover no-repeat;
+    box-shadow: 0 12px 35px #35263f25;
   }
   .room-caption {
     right: 10px;
