@@ -831,7 +831,7 @@ a {
     transition: filter 0.8s ease, background 0.8s ease;
   }
   .room::before {
-    background: url('/cottage.png') 75% top/auto 112% no-repeat;
+    background: url('/cottage.png') 75% 45%/auto 112% no-repeat;
   }
   .room::after {
     background: var(--room-season-tint), var(--room-time-tint);
