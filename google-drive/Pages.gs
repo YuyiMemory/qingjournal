@@ -66,7 +66,7 @@ function login_(input,c){
   if(limit.failures>=10)fail_('嘗試次數過多，請在五分鐘後再試。',429);
   const password=input.password;
   if(typeof password!=='string'||password.length>256||!same_(mac_(password,c.key),mac_(c[role],c.key))){limit.failures++;c.p.setProperty(key,JSON.stringify(limit));fail_('密碼不正確。',401);}
-  const exp=now+(role==='owner'?1800000:3600000);
+  const exp=now+30*24*60*60*1000;
   const payload=Utilities.base64EncodeWebSafe(JSON.stringify({role:role,exp:exp,nonce:Utilities.getUuid()}));
   return reply_({token:payload+'.'+mac_(payload,c.key),role:role,expiresAt:exp});
 }
