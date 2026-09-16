@@ -2,7 +2,8 @@
 // Never add this alongside the old Code.gs; do not change the confession game.
 // All helpers end in _ so google.script.run cannot invoke them directly.
 const PAGES_ORIGIN = 'https://yuyimemory.github.io';
-const PAGES_TABS = {diaries:'日記小屋_日記',comments:'日記小屋_留言',hearts:'日記小屋_愛心'};
+const PAGES_TABS = {diaries:'日記小屋_日記',comments:'日記小屋_留言',hearts:'日記小屋_愛心',logs:'日記小屋_紀錄'};
+const PAGES_LOG_HEADER = ['時間','動作','角色','訪客','筆數'];
 
 // Run manually once after setting the three properties described in README.
 function setupCottage_() {
@@ -10,7 +11,9 @@ function setupCottage_() {
   const reader=p.getProperty('COTTAGE_READER_PASSWORD'), owner=p.getProperty('COTTAGE_OWNER_PASSWORD');
   if(!reader||!owner||reader.length<4||owner.length<4||reader.length>256||owner.length>256||reader===owner) throw new Error('請設定兩組不同、各 4–256 字元的密碼。');
   const book=SpreadsheetApp.openById(p.getProperty('COTTAGE_SHEET_ID'));
-  Object.keys(PAGES_TABS).forEach(k=>{if(!book.getSheetByName(PAGES_TABS[k]))throw new Error('找不到分頁：'+PAGES_TABS[k]);});
+  ['diaries','comments','hearts'].forEach(k=>{if(!book.getSheetByName(PAGES_TABS[k]))throw new Error('找不到分頁：'+PAGES_TABS[k]);});
+  // The read log is the only tab this script creates; the three data tabs stay untouched.
+  if(!book.getSheetByName(PAGES_TABS.logs))book.insertSheet(PAGES_TABS.logs).appendRow(PAGES_LOG_HEADER);
   if(!p.getProperty('COTTAGE_BRIDGE_SECRET'))p.setProperty('COTTAGE_BRIDGE_SECRET',Utilities.getUuid()+Utilities.getUuid());
   if(!p.getProperty('COTTAGE_OWNER_ID')) {
     const sheet=book.getSheetByName(PAGES_TABS.diaries);
@@ -79,6 +82,16 @@ function commit_(sheetId,requests){
 }
 function entry_(row){const e={id:String(row[0]),iso:String(row[2]),date:row[3],day:row[4],body:row[5],note:row[6],version:Number(row[9])};if(row[7])e.document=JSON.parse(row[7]);return e;}
 function text_(v,max){return typeof v==='string'&&v.length<=max;}
+function visitor_(v){return text_(v,80)&&/^[a-zA-Z0-9-]{8,80}$/.test(v)?v:'';}
+// Append-only read log. Never throws: a full, missing or renamed log tab must not block reading the diary.
+// Every value written here is server-generated or matched against the visitor pattern, so no cell can start a formula.
+function log_(book,action,role,visitor,count){
+  try{
+    const sheet=book.getSheetByName(PAGES_TABS.logs);
+    if(!sheet)return;
+    sheet.appendRow([new Date().toISOString(),action,role,visitor,Number(count)||0]);
+  }catch(error){}
+}
 
 // This is the ONLY callable data operation. Every operation except login requires a signed session.
 function cottageRequest(input){
@@ -93,7 +106,11 @@ function cottageRequest(input){
     const isOwner=session.role==='owner';
     if(input.action==='save-diaries'&&!isOwner)fail_('只有主人可以修改日記。',403);
     const book=SpreadsheetApp.openById(c.sheet),diarySheet=book.getSheetByName(PAGES_TABS.diaries),diaries=rows_(diarySheet,12);
-    if(input.action==='read-diaries')return reply_({entries:diaries.filter(r=>r[8]==='public'||(isOwner&&r[1]===c.ownerId)).map(entry_).sort((a,b)=>b.iso.localeCompare(a.iso)),canWrite:isOwner});
+    if(input.action==='read-diaries'){
+      const entries=diaries.filter(r=>r[8]==='public'||(isOwner&&r[1]===c.ownerId)).map(entry_).sort((a,b)=>b.iso.localeCompare(a.iso));
+      log_(book,'read-diaries',session.role,visitor_(input.visitorId),entries.length);
+      return reply_({entries:entries,canWrite:isOwner});
+    }
     if(input.action==='save-diaries'){
       if(!Array.isArray(input.entries)||input.entries.length>500)fail_('日記格式不正確。',400);
       const now=new Date().toISOString(),requests=[],seen=Object.create(null);
@@ -112,12 +129,14 @@ function cottageRequest(input){
       commit_(c.sheet,requests);const versions=Object.create(null);diaries.forEach(r=>{versions[String(r[0])]=Number(r[9]);});
       return reply_({saved:input.entries.length,versions:versions});
     }
-    const visitor=input.visitorId;if(!text_(visitor,80)||!/^[a-zA-Z0-9-]{8,80}$/.test(visitor))fail_('缺少訪客識別。',400);
+    const visitor=visitor_(input.visitorId);if(!visitor)fail_('缺少訪客識別。',400);
     const ids=new Set(diaries.filter(r=>r[8]==='public').map(r=>String(r[0])));
     const hs=book.getSheetByName(PAGES_TABS.hearts),cs=book.getSheetByName(PAGES_TABS.comments),hearts=rows_(hs,4),comments=rows_(cs,6);
     if(input.action==='read-community'){
-      const out=Object.create(null);comments.filter(r=>r[4]==='visible'&&ids.has(String(r[1]))).forEach(r=>{const id=String(r[1]);if(!out[id])out[id]=[];out[id].push({text:r[3],date:String(r[5])});});
-      return reply_({likes:hearts.filter(r=>r[1]===visitor&&r[2]==='heart'&&ids.has(String(r[0]))).map(r=>String(r[0])),comments:out});
+      const out=Object.create(null);let seen=0;comments.filter(r=>r[4]==='visible'&&ids.has(String(r[1]))).forEach(r=>{const id=String(r[1]);if(!out[id])out[id]=[];out[id].push({text:r[3],date:String(r[5])});seen++;});
+      const likes=hearts.filter(r=>r[1]===visitor&&r[2]==='heart'&&ids.has(String(r[0]))).map(r=>String(r[0]));
+      log_(book,'read-community',session.role,visitor,seen+likes.length);
+      return reply_({likes:likes,comments:out});
     }
     if(!ids.has(input.entryId))fail_('找不到日記。',404);
     const now=new Date().toISOString();

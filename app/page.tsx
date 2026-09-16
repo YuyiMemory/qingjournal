@@ -24,15 +24,17 @@ export default function Home({canWrite=false,onLock=()=>{}}:{canWrite?:boolean;o
  const interactionBusy=useRef(false);
  useEffect(()=>{alive.current=true;let cancelled=false;void (async()=>{
   setWriteDate(localToday());setMonth(localToday().slice(0,7));setWritingReady(false);setLoaded(false);
+  // Resolved before the first request so the server read log can tell devices apart.
+  let id='';try{id=localStorage.getItem('cottage-visitor-v1')||'';if(!id){id=crypto.randomUUID();localStorage.setItem('cottage-visitor-v1',id);}}catch{id=crypto.randomUUID();}visitorId.current=id;
   try{
-   const cloud=await api<{entries:DiaryEntry[];canWrite:boolean}>('read-diaries');if(cancelled)return;
+   const cloud=await api<{entries:DiaryEntry[];canWrite:boolean}>('read-diaries',{visitorId:id});if(cancelled)return;
    const display=canWrite?cloud.entries.map(e=>pendingDrafts.get(e.id)||e):cloud.entries;
    if(canWrite)for(const draft of pendingDrafts.values())if(!display.some(e=>e.id===draft.id))display.push(draft);
    current.current=display;setEntries(display);setEditId(display[0]?.id||'');setSelected(value=>display.some(e=>e.id===value)?value:(display[0]?.id||''));
    setWritingReady(canWrite&&cloud.canWrite);setSaveState('✓ 已載入 Google 試算表');setError('');
    if(canWrite&&pendingDrafts.size){paused.current=true;setSaveFailed(true);setError('有尚未同步的草稿。請先下載備份，再決定重試或重新載入。');}
   }catch(err){if(!cancelled){setError(err instanceof Error?err.message:'日記暫時無法載入。');setSaveState('讀取失敗');}}
-  try{let id='';try{id=localStorage.getItem('cottage-visitor-v1')||'';if(!id){id=crypto.randomUUID();localStorage.setItem('cottage-visitor-v1',id);}}catch{id=crypto.randomUUID();}visitorId.current=id;
+  try{
    const community=await api<Data>('read-community',{visitorId:id});if(!cancelled){setData(community);setLoaded(true);}
   }catch{if(!cancelled)setError('日記或互動紀錄尚未成功載入，請重試。');}
  })();return()=>{cancelled=true;alive.current=false;if(syncTimer.current)clearTimeout(syncTimer.current);};},[canWrite,reload]);
