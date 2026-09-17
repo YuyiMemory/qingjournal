@@ -3,7 +3,7 @@
 // All helpers end in _ so google.script.run cannot invoke them directly.
 const PAGES_ORIGIN = 'https://yuyimemory.github.io';
 const PAGES_TABS = {diaries:'日記小屋_日記',comments:'日記小屋_留言',hearts:'日記小屋_愛心',logs:'日記小屋_紀錄'};
-const PAGES_LOG_HEADER = ['時間','動作','角色','訪客','筆數'];
+const PAGES_LOG_HEADER = ['時間（UTC+8）','動作','角色','訪客','筆數'];
 
 // Run manually once after setting the three properties described in README.
 function setupCottage_() {
@@ -83,13 +83,15 @@ function commit_(sheetId,requests){
 function entry_(row){const e={id:String(row[0]),iso:String(row[2]),date:row[3],day:row[4],body:row[5],note:row[6],version:Number(row[9])};if(row[7])e.document=JSON.parse(row[7]);return e;}
 function text_(v,max){return typeof v==='string'&&v.length<=max;}
 function visitor_(v){return text_(v,80)&&/^[a-zA-Z0-9-]{8,80}$/.test(v)?v:'';}
+// Taipei has had no daylight saving since 1980, so a flat +8 hour shift is exact and needs no script timezone setting.
+function stamp_(){return new Date(Date.now()+8*3600*1000).toISOString().replace('T',' ').slice(0,19);}
 // Append-only read log. Never throws: a full, missing or renamed log tab must not block reading the diary.
 // Every value written here is server-generated or matched against the visitor pattern, so no cell can start a formula.
 function log_(book,action,role,visitor,count){
   try{
     const sheet=book.getSheetByName(PAGES_TABS.logs);
     if(!sheet)return;
-    sheet.appendRow([new Date().toISOString(),action,role,visitor,Number(count)||0]);
+    sheet.appendRow([stamp_(),action,role,visitor,Number(count)||0]);
   }catch(error){}
 }
 
@@ -133,10 +135,8 @@ function cottageRequest(input){
     const ids=new Set(diaries.filter(r=>r[8]==='public').map(r=>String(r[0])));
     const hs=book.getSheetByName(PAGES_TABS.hearts),cs=book.getSheetByName(PAGES_TABS.comments),hearts=rows_(hs,4),comments=rows_(cs,6);
     if(input.action==='read-community'){
-      const out=Object.create(null);let seen=0;comments.filter(r=>r[4]==='visible'&&ids.has(String(r[1]))).forEach(r=>{const id=String(r[1]);if(!out[id])out[id]=[];out[id].push({text:r[3],date:String(r[5])});seen++;});
-      const likes=hearts.filter(r=>r[1]===visitor&&r[2]==='heart'&&ids.has(String(r[0]))).map(r=>String(r[0]));
-      log_(book,'read-community',session.role,visitor,seen+likes.length);
-      return reply_({likes:likes,comments:out});
+      const out=Object.create(null);comments.filter(r=>r[4]==='visible'&&ids.has(String(r[1]))).forEach(r=>{const id=String(r[1]);if(!out[id])out[id]=[];out[id].push({text:r[3],date:String(r[5])});});
+      return reply_({likes:hearts.filter(r=>r[1]===visitor&&r[2]==='heart'&&ids.has(String(r[0]))).map(r=>String(r[0])),comments:out});
     }
     if(!ids.has(input.entryId))fail_('找不到日記。',404);
     const now=new Date().toISOString();
