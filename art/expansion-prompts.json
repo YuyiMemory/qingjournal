@@ -1,0 +1,60 @@
+{
+  "generator": "Built-in image_gen",
+  "basePrompt": "Use case: illustration-story. One landscape 3:2 background illustration for a cozy diary website. Soft painterly storybook environment, detailed fluffy plush fur, expressive tender faces, beautiful natural lighting, rich gentle colors. Character identity: a TINY pink pig BOY and a TINY black-and-white panda GIRL (not red panda). They are nearly the same size, but the pig MUST be visibly about 10% LARGER than the panda in both head and body. Both are round, short-limbed miniature plush companions. The panda's head MUST NOT be larger than the pig's head. Equal companions, affectionate and playful, reciprocal care, never parent and child. No bows, exaggerated eyelashes, clothing used as gender stereotypes, human body, adult-sized animals. Composition: LEFT HALF is calm low-detail wall or atmosphere for diary content; BOTH characters and the activity together on RIGHT third, heads at similar vertical level around 65% image height, characters fully visible. Works as a shallow mobile crop around 72% height. No text, letters, logos, UI, border, collage, watermark.  Important composition refinement: do NOT make giant closeups. Both complete tiny companions together occupy the right 35-40% of the image, with heads at similar height around 52-60% of canvas height. Keep both faces and essential interaction visible in a shallow wide crop. Their bodies should be small relative to the furniture and environment, both about 26-32% of canvas height. Strongly differentiate the specified palette and activity for this image. ",
+  "scenes": [
+    {
+      "id": "breakfast-tea",
+      "title": "早餐的熱茶",
+      "caption": "一起把早晨慢慢喝完",
+      "description": "The tiny pig boy sets two small teacups on a breakfast table while the slightly smaller panda girl passes him a slice of toast, cozy breakfast nook. Pale butter yellow and pale blue, fresh soft morning light.",
+      "season": 0,
+      "time": 1,
+      "position": "82% 42%"
+    },
+    {
+      "id": "folding-laundry",
+      "title": "一起摺衣服",
+      "caption": "平凡的小事，也想和你一起",
+      "description": "They fold freshly dried tiny towels together beside a wicker laundry basket, pig holds one towel while panda smooths another. Clean ivory, faded denim blue and soft lilac, breezy open cottage window.",
+      "season": 0,
+      "time": 1,
+      "position": "82% 42%"
+    },
+    {
+      "id": "blanket-fort",
+      "title": "棉被小帳篷",
+      "caption": "在家裡，搭一個小世界",
+      "description": "The two tiny companions peek together from a handmade blanket fort with small cushions and a gentle string of lights, pig slightly larger than panda. Lavender, periwinkle and candle-gold, playful cozy twilight.",
+      "season": 0,
+      "time": 1,
+      "position": "82% 42%"
+    },
+    {
+      "id": "jigsaw-afternoon",
+      "title": "拼圖午後",
+      "caption": "慢慢拼好，一起完成",
+      "description": "They sit beside one another fitting the last pieces into a landscape jigsaw puzzle on a low cottage table, panda offers a puzzle piece to pig. Dusty teal, oatmeal and muted coral, gentle afternoon light.",
+      "season": 0,
+      "time": 1,
+      "position": "82% 42%"
+    },
+    {
+      "id": "evening-music",
+      "title": "晚安小曲",
+      "caption": "把溫柔唱給今天聽",
+      "description": "Pig plays a tiny wooden ukulele while panda happily taps a small hand drum beside him, both sitting on a rug in a cottage music corner. Deep plum, amber and warm rose, soft evening lamp.",
+      "season": 0,
+      "time": 1,
+      "position": "82% 42%"
+    },
+    {
+      "id": "window-bubbles",
+      "title": "窗邊吹泡泡",
+      "caption": "讓快樂輕輕飛起來",
+      "description": "Panda blows soap bubbles through a small wand while pig reaches gently for a floating bubble, both tiny by an open cottage window. Aqua, shell pink, iridescent highlights, fresh bright morning.",
+      "season": 0,
+      "time": 1,
+      "position": "82% 42%"
+    }
+  ]
+}
