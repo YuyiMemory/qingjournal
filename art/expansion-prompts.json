@@ -163,6 +163,60 @@
       "season": 0,
       "time": 2,
       "position": "82% 42%"
+    },
+    {
+      "id": "kite-in-meadow",
+      "title": "一起放風箏",
+      "caption": "把好心情交給風",
+      "description": "Pig holds the spool of a small diamond kite while panda steadies the string beside him, both looking up with delight. Open meadow near cottage, sky blue, fresh lime and soft coral, breezy afternoon.",
+      "season": 1,
+      "time": 2,
+      "position": "82% 42%"
+    },
+    {
+      "id": "paper-boats",
+      "title": "小紙船出發",
+      "caption": "讓想念順著小溪走",
+      "description": "Both crouch side by side launching two tiny paper boats into a shallow garden stream, pig's paw gently steadying panda's boat. Aquamarine, moss green, cream paper, soft daylight.",
+      "season": 1,
+      "time": 2,
+      "position": "82% 42%"
+    },
+    {
+      "id": "stepping-stones",
+      "title": "小溪上的腳步",
+      "caption": "一步一步，也有你陪著",
+      "description": "Pig offers a paw to panda as she steps onto the same broad dry stepping stone in a very shallow clear stream. Both tiny, similar height. Fern green, smooth gray stone and pale blue water, dappled sun.",
+      "season": 1,
+      "time": 2,
+      "position": "82% 42%"
+    },
+    {
+      "id": "lake-rowboat",
+      "title": "湖上的慢時光",
+      "caption": "今天不趕路，只想陪你",
+      "description": "Both tiny companions sit together safely in a broad little wooden rowboat on a calm lake, pig holds one oar and panda holds the other. Misty aqua, dusty lavender and honey wood, peaceful late afternoon.",
+      "season": 1,
+      "time": 2,
+      "position": "82% 42%"
+    },
+    {
+      "id": "firefly-stroll",
+      "title": "螢火蟲散步",
+      "caption": "有些光，會陪我們走一段",
+      "description": "Pig and panda walk shoulder to shoulder along a cottage garden path watching a few glowing fireflies, pig carries a small unlit wicker basket. Deep teal, indigo and tiny lemon lights, magical summer dusk.",
+      "season": 1,
+      "time": 2,
+      "position": "82% 42%"
+    },
+    {
+      "id": "clover-rest",
+      "title": "三葉草的午休",
+      "caption": "在草地上，偷一點空閒",
+      "description": "The two tiny companions recline side by side on a small picnic cushion among clover, pig holds a small leaf up to shade panda. Soft leaf green, ivory blossoms, lilac shadows, relaxed summer afternoon.",
+      "season": 1,
+      "time": 2,
+      "position": "82% 42%"
     }
   ]
 }

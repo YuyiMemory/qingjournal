@@ -191,6 +191,54 @@ export const scenes = [
     "season": 0,
     "time": 2,
     "position": "82% 50%"
+  },
+  {
+    "id": "kite-in-meadow",
+    "title": "一起放風箏",
+    "caption": "把好心情交給風",
+    "season": 1,
+    "time": 2,
+    "position": "82% 58%"
+  },
+  {
+    "id": "paper-boats",
+    "title": "小紙船出發",
+    "caption": "讓想念順著小溪走",
+    "season": 1,
+    "time": 2,
+    "position": "82% 45%"
+  },
+  {
+    "id": "stepping-stones",
+    "title": "小溪上的腳步",
+    "caption": "一步一步，也有你陪著",
+    "season": 1,
+    "time": 2,
+    "position": "82% 38%"
+  },
+  {
+    "id": "lake-rowboat",
+    "title": "湖上的慢時光",
+    "caption": "今天不趕路，只想陪你",
+    "season": 1,
+    "time": 2,
+    "position": "82% 42%"
+  },
+  {
+    "id": "firefly-stroll",
+    "title": "螢火蟲散步",
+    "caption": "有些光，會陪我們走一段",
+    "season": 1,
+    "time": 2,
+    "position": "82% 58%"
+  },
+  {
+    "id": "clover-rest",
+    "title": "三葉草的午休",
+    "caption": "在草地上，偷一點空閒",
+    "season": 1,
+    "time": 2,
+    "position": "82% 55%"
   }
 ];
 
