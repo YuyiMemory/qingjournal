@@ -287,6 +287,54 @@ export const scenes = [
     "season": 2,
     "time": 2,
     "position": "82% 50%"
+  },
+  {
+    "id": "tiny-pottery",
+    "title": "捏一個小杯子",
+    "caption": "歪歪的，也很可愛",
+    "season": 0,
+    "time": 2,
+    "position": "82% 42%"
+  },
+  {
+    "id": "yarn-and-paws",
+    "title": "毛線繞成溫暖",
+    "caption": "一針一線，都是陪伴",
+    "season": 0,
+    "time": 2,
+    "position": "82% 48%"
+  },
+  {
+    "id": "paper-star-folding",
+    "title": "折一罐小星星",
+    "caption": "把願望折小，留在身邊",
+    "season": 0,
+    "time": 2,
+    "position": "82% 42%"
+  },
+  {
+    "id": "little-photo",
+    "title": "拍下這一刻",
+    "caption": "想把你的笑容留起來",
+    "season": 0,
+    "time": 2,
+    "position": "82% 50%"
+  },
+  {
+    "id": "pressed-flowers",
+    "title": "花朵的書籤",
+    "caption": "把今天的花，留給明天",
+    "season": 0,
+    "time": 2,
+    "position": "82% 42%"
+  },
+  {
+    "id": "wooden-blocks",
+    "title": "積木的小屋",
+    "caption": "一起蓋一個喜歡的家",
+    "season": 0,
+    "time": 2,
+    "position": "82% 50%"
   }
 ];
 

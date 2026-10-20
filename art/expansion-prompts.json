@@ -271,6 +271,60 @@
       "season": 2,
       "time": 2,
       "position": "82% 42%"
+    },
+    {
+      "id": "tiny-pottery",
+      "title": "捏一個小杯子",
+      "caption": "歪歪的，也很可愛",
+      "description": "Pig shapes a small clay cup at a low pottery table while panda carefully adds a tiny handle; equally engaged little makers. Clay pink, stone gray, dusty blue and cream, quiet cottage studio.",
+      "season": 0,
+      "time": 2,
+      "position": "82% 42%"
+    },
+    {
+      "id": "yarn-and-paws",
+      "title": "毛線繞成溫暖",
+      "caption": "一針一線，都是陪伴",
+      "description": "Panda knits a short simple scarf while pig gently holds a ball of yarn, both tiny seated together on cushions. Muted mauve, oatmeal and soft mustard, warm cottage afternoon.",
+      "season": 0,
+      "time": 2,
+      "position": "82% 42%"
+    },
+    {
+      "id": "paper-star-folding",
+      "title": "折一罐小星星",
+      "caption": "把願望折小，留在身邊",
+      "description": "They fold tiny paper stars together, panda places one in a clear jar while pig carefully folds a narrow blank paper strip. Soft lavender, pale turquoise and peach, cottage craft table with gentle lamplight.",
+      "season": 0,
+      "time": 2,
+      "position": "82% 42%"
+    },
+    {
+      "id": "little-photo",
+      "title": "拍下這一刻",
+      "caption": "想把你的笑容留起來",
+      "description": "Pig holds a tiny simple camera while panda playfully leans into the frame beside a flowerpot, the camera pointed outward toward viewer not obscuring either face. Powder blue, muted pink and sage, bright cottage garden.",
+      "season": 0,
+      "time": 2,
+      "position": "82% 42%"
+    },
+    {
+      "id": "pressed-flowers",
+      "title": "花朵的書籤",
+      "caption": "把今天的花，留給明天",
+      "description": "Both arrange small pressed flowers into a blank cream bookmark, pig holds tweezers carefully while panda offers one pale daisy. Soft ivory, faded blue and muted violet, gentle cottage writing desk.",
+      "season": 0,
+      "time": 2,
+      "position": "82% 42%"
+    },
+    {
+      "id": "wooden-blocks",
+      "title": "積木的小屋",
+      "caption": "一起蓋一個喜歡的家",
+      "description": "Pig steadies a little wooden-block cottage while panda carefully places the roof block, both tiny seated on a soft rug. Pale primary colors softened with natural wood and warm ivory, playful daylight.",
+      "season": 0,
+      "time": 2,
+      "position": "82% 42%"
     }
   ]
 }
