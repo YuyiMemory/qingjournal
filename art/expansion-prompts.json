@@ -217,6 +217,60 @@
       "season": 1,
       "time": 2,
       "position": "82% 42%"
+    },
+    {
+      "id": "cherry-blossom-bench",
+      "title": "櫻花落在肩上",
+      "caption": "春天，也想和你一起看",
+      "description": "Pig and panda sit upright together on a small garden bench beneath cherry blossoms, panda gently lifts a fallen petal from pig's ear. Pale sakura pink, cool slate blue and ivory, airy spring morning.",
+      "season": 2,
+      "time": 2,
+      "position": "82% 42%"
+    },
+    {
+      "id": "seashell-gift",
+      "title": "海邊的小禮物",
+      "caption": "撿到一顆，海的聲音",
+      "description": "Pig offers panda a tiny pretty seashell while panda holds a woven pouch for their finds, both on a quiet beach beside a cottage boardwalk. Turquoise sea, peach sand, pearly cream, soft summer light.",
+      "season": 2,
+      "time": 2,
+      "position": "82% 42%"
+    },
+    {
+      "id": "autumn-leaf-collage",
+      "title": "把秋天貼起來",
+      "caption": "一片葉子，就是一段回憶",
+      "description": "They sit together arranging fallen autumn leaves into a little picture on blank cream paper, pig offers a red leaf and panda holds a golden one. Rust red, mustard gold and muted forest green, cozy cottage porch.",
+      "season": 2,
+      "time": 2,
+      "position": "82% 42%"
+    },
+    {
+      "id": "snowman-friends",
+      "title": "我們的小雪人",
+      "caption": "把冬天堆成可愛的樣子",
+      "description": "Pig gently places a little carrot nose on a small snowman while panda pats snow into its round base, both tiny at similar depth with simple shared knitted scarves. Icy blue, white, berry red accents, soft winter daylight.",
+      "season": 2,
+      "time": 2,
+      "position": "82% 42%"
+    },
+    {
+      "id": "lantern-path",
+      "title": "提燈的小路",
+      "caption": "夜色裡，一起慢慢走",
+      "description": "Pig carries one tiny warm lantern while panda walks close and points toward distant cottage lights, both faces and paws visible. Indigo, muted burgundy, amber gold, autumn evening garden path.",
+      "season": 2,
+      "time": 2,
+      "position": "82% 42%"
+    },
+    {
+      "id": "rain-porch",
+      "title": "屋簷下等雨停",
+      "caption": "等雨的時候，也很喜歡你",
+      "description": "Both sit side by side on a covered cottage porch, pig shares a dry folded towel with panda as they watch soft rain beyond the railing. Cool sea-glass blue, sage and warm beige, tranquil spring rain.",
+      "season": 2,
+      "time": 2,
+      "position": "82% 42%"
     }
   ]
 }

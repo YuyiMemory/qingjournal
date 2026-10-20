@@ -239,6 +239,54 @@ export const scenes = [
     "season": 1,
     "time": 2,
     "position": "82% 55%"
+  },
+  {
+    "id": "cherry-blossom-bench",
+    "title": "櫻花落在肩上",
+    "caption": "春天，也想和你一起看",
+    "season": 2,
+    "time": 2,
+    "position": "82% 50%"
+  },
+  {
+    "id": "seashell-gift",
+    "title": "海邊的小禮物",
+    "caption": "撿到一顆，海的聲音",
+    "season": 2,
+    "time": 2,
+    "position": "82% 50%"
+  },
+  {
+    "id": "autumn-leaf-collage",
+    "title": "把秋天貼起來",
+    "caption": "一片葉子，就是一段回憶",
+    "season": 2,
+    "time": 2,
+    "position": "82% 50%"
+  },
+  {
+    "id": "snowman-friends",
+    "title": "我們的小雪人",
+    "caption": "把冬天堆成可愛的樣子",
+    "season": 2,
+    "time": 2,
+    "position": "82% 42%"
+  },
+  {
+    "id": "lantern-path",
+    "title": "提燈的小路",
+    "caption": "夜色裡，一起慢慢走",
+    "season": 2,
+    "time": 2,
+    "position": "82% 50%"
+  },
+  {
+    "id": "rain-porch",
+    "title": "屋簷下等雨停",
+    "caption": "等雨的時候，也很喜歡你",
+    "season": 2,
+    "time": 2,
+    "position": "82% 50%"
   }
 ];
 
