@@ -3,9 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import Writer from './writer';
 import { dateLabels, localToday, RichText, type DiaryEntry } from './diary';
 import { api } from '../pages/bridge';
+import { pickScene, sceneInterval, scenes, sceneUrl } from './scenes';
 
-const seasons = ['春天','夏天','秋天','冬天'];
-const times = ['清晨','中午','下午','晚上'];
 type Data = { likes: string[]; comments: Record<string, { text:string; date:string }[]> };
 const initial:Data={likes:[],comments:{}};
 // Private data and unfinished drafts stay in memory, never in browser disk caches.
@@ -16,7 +15,6 @@ export default function Home({canWrite=false,onLock=()=>{}}:{canWrite?:boolean;o
  const [writeDate,setWriteDate]=useState('2026-09-10'),[month,setMonth]=useState('2026-09');
  const [data,setData]=useState<Data>(initial),[loaded,setLoaded]=useState(false),[error,setError]=useState('');
  const [drafts,setDrafts]=useState<Record<string,string>>({}),[open,setOpen]=useState<string|null>(null);
- const [settings,setSettings]=useState(false);
  const syncTimer=useRef<ReturnType<typeof setTimeout>|null>(null),visitorId=useRef(''),journalRef=useRef<HTMLElement|null>(null);
  const current=useRef<DiaryEntry[]>([]),alive=useRef(true),saving=useRef(false),paused=useRef(false);
  const [hasDrafts,setHasDrafts]=useState(canWrite&&pendingDrafts.size>0),[saveFailed,setSaveFailed]=useState(false),[reload,setReload]=useState(0);
@@ -60,14 +58,23 @@ export default function Home({canWrite=false,onLock=()=>{}}:{canWrite?:boolean;o
  const editing=entries.find(e=>e.id===editId);
  const [year,monthNumber]=month.split('-').map(Number);
  const firstWeekday=new Date(year,monthNumber-1,1).getDay(),daysInMonth=new Date(year,monthNumber,0).getDate();
- const [season,setSeason]=useState(2),[time,setTime]=useState(3),[auto,setAuto]=useState(true);
+ const [season,setSeason]=useState(2),[time,setTime]=useState(3);
+ const [sceneIndex,setSceneIndex]=useState<number|null>(null);
+ const sceneRequest=useRef(0),lastScene=useRef<string|null>(null);
+ function showScene(index:number){
+  const request=++sceneRequest.current,image=new Image();image.src=sceneUrl(index);
+  const commit=()=>{if(!alive.current||request!==sceneRequest.current)return;const scene=scenes[index];setSceneIndex(index);setSeason(scene.season);setTime(scene.time);lastScene.current=scene.id;try{localStorage.setItem('cottage-last-scene-v1',scene.id);}catch{/* Illustration selection is optional. */}};
+  void image.decode().then(commit).catch(()=>{/* Keep the current background if an illustration cannot load. */});
+ }
  const [query,setQuery]=useState(''),[selected,setSelected]=useState(''),[font,setFont]=useState(19);
- useEffect(()=>{if(!auto)return;const sync=()=>{const d=new Date(),h=d.getHours(),m=d.getMonth();setSeason(m>=2&&m<=4?0:m>=5&&m<=7?1:m>=8&&m<=10?2:3);setTime(h>=5&&h<11?0:h>=11&&h<14?1:h>=14&&h<18?2:3);};sync();const t=setInterval(sync,60000);return()=>clearInterval(t);},[auto]);
  useEffect(()=>{
-  const context=(document as Document & {modelContext?:{registerTool:(tool:object,options:object)=>void|Promise<void>}}).modelContext;
-  if(!context)return;const lifecycle=new AbortController();
-  Promise.resolve(context.registerTool({name:'set_cottage_scene',description:'Set the diary demo season and time of day, disabling automatic time selection.',inputSchema:{type:'object',properties:{season:{type:'integer',minimum:0,maximum:3},time:{type:'integer',minimum:0,maximum:3}},required:['season','time'],additionalProperties:false},annotations:{readOnlyHint:false},execute:(input:unknown)=>{const v=input as {season:number;time:number};if(!v||!Number.isInteger(v.season)||!Number.isInteger(v.time)||v.season<0||v.season>3||v.time<0||v.time>3)throw new Error('Season and time must be integers from 0 to 3.');setAuto(false);setSeason(v.season);setTime(v.time);return {season:seasons[v.season],time:times[v.time]};}},{signal:lifecycle.signal})).catch(()=>{});
-  return()=>lifecycle.abort();
+  if(!lastScene.current)try{lastScene.current=localStorage.getItem('cottage-last-scene-v1');}catch{/* Storage may be unavailable. */}
+  let changedAt=Date.now(),timer:ReturnType<typeof setTimeout>;
+  const change=()=>{clearTimeout(timer);changedAt=Date.now();showScene(pickScene(lastScene.current));timer=setTimeout(change,sceneInterval);};
+  const resume=()=>{if(document.visibilityState==='visible'&&Date.now()-changedAt>=sceneInterval)change();};
+  change();
+  document.addEventListener('visibilitychange',resume);
+  return()=>{clearTimeout(timer);document.removeEventListener('visibilitychange',resume);};
  },[]);
  function like(id:string){if(!loaded||interactionBusy.current)return;interactionBusy.current=true;setCommunityBusy(true);void (async()=>{try{const result=await api<{liked:boolean}>('set-like',{visitorId:visitorId.current,entryId:id,liked:!data.likes.includes(id)});if(alive.current){setData(d=>({...d,likes:result.liked?[...d.likes.filter(x=>x!==id),id]:d.likes.filter(x=>x!==id)}));setError('');}}catch{if(alive.current)setError('愛心結果未確認，請重新載入後確認。');}finally{interactionBusy.current=false;if(alive.current)setCommunityBusy(false);}})();}
  function comment(id:string){const text=(drafts[id]||'').trim();if(!text||!loaded||interactionBusy.current)return;interactionBusy.current=true;setCommunityBusy(true);void (async()=>{try{const result=await api<{comment:{text:string;date:string}}>('comment',{visitorId:visitorId.current,entryId:id,text,requestId:crypto.randomUUID()});if(alive.current){setData(d=>({...d,comments:{...d.comments,[id]:[...(d.comments[id]||[]),result.comment]}}));setDrafts(d=>({...d,[id]:''}));setError('');}}catch(err){if(alive.current)setError(err instanceof Error?err.message:'留言結果未確認，請重新載入後確認。');}finally{interactionBusy.current=false;if(alive.current)setCommunityBusy(false);}})();}
@@ -77,7 +84,8 @@ export default function Home({canWrite=false,onLock=()=>{}}:{canWrite?:boolean;o
  const shownIndex=shown?matching.findIndex(e=>e.id===shown.id):-1;
  const newer=shownIndex>0?matching[shownIndex-1]:null,older=shownIndex>=0&&shownIndex<matching.length-1?matching[shownIndex+1]:null;
  function choose(entry:DiaryEntry){setSelected(entry.id);setEditId(entry.id);setMonth(entry.iso.slice(0,7));setOpen(null);requestAnimationFrame(()=>journalRef.current?.scrollIntoView({behavior:'smooth',block:'start'}));}
- return <main className={`cottage season-${season} time-${time}`}>
+ const scene=sceneIndex===null?null:scenes[sceneIndex];
+ return <main className={`cottage season-${season} time-${time}`} data-scene={scene?.id} style={sceneIndex===null?undefined:{'--scene-image':`url("${sceneUrl(sceneIndex)}")`,'--scene-position':scene?.position} as React.CSSProperties}>
   <div className="scenery" aria-hidden="true"/><div className="lightwash" aria-hidden="true"/>
   <div className="weather" aria-hidden="true">{Array.from({length:16},(_,i)=><i key={i} style={{left:`${i*6.2}%`,animationDelay:`${i*.7}s`,animationDuration:`${12+i%5}s`}}>{season===0?'❀':season===1?'·':season===2?'❧':'❅'}</i>)}</div>
   <header className="mobile-brand">⌂ 日記小屋 <span>留一盞燈，等你來。</span></header>
@@ -101,8 +109,7 @@ export default function Home({canWrite=false,onLock=()=>{}}:{canWrite?:boolean;o
    </article>)}{!visible.length&&<div className="empty"><h2>還沒找到這段回憶</h2><p>換個關鍵字試試吧。</p><button onClick={()=>{setQuery('');if(entries[0])setSelected(entries[0].id);}}>回到最新日記</button></div>}</div>}
    <footer className="journal-footer">日記、愛心與回覆存於 Google 試算表<br/>{saveState}{error&&<><p role="alert">{error}</p><button disabled={hasDrafts} onClick={()=>setReload(v=>v+1)}>重新載入</button></>}</footer>
   </section>
-  <aside className="room" aria-label="陪伴小屋"><div className="room-caption"><span>{['花開的時候','微風來作客','收藏一片秋天','等一場溫柔的雪'][season]}</span><p>{['晨光輕輕落下','把陽光留給你','晚霞也慢了下來','今晚也有一盞燈'][time]}</p></div>
-   <div className="scene-control"><button className="scene-toggle" onClick={()=>setSettings(!settings)} aria-expanded={settings}><span>✧ {seasons[season]} · {times[time]}</span><span>調整光景 {settings?'−':'＋'}</span></button>{settings&&<div className="settings"><label>季節<select aria-label="季節" value={season} onChange={e=>{setAuto(false);setSeason(+e.target.value);}}>{seasons.map((s,i)=><option key={s} value={i}>{s}</option>)}</select></label><label>時段<select aria-label="時段" value={time} onChange={e=>{setAuto(false);setTime(+e.target.value);}}>{times.map((s,i)=><option key={s} value={i}>{s}</option>)}</select></label><label className="check"><input type="checkbox" checked={auto} onChange={e=>setAuto(e.target.checked)}/>跟隨現在的季節與時間</label><p>光景為童話效果，不代表即時天氣。</p></div>}</div>
+  <aside className="room" aria-label="陪伴小屋"><div className="room-caption"><span>{scene?.title||['花開的時候','微風來作客','收藏一片秋天','等一場溫柔的雪'][season]}</span><p>{scene?.caption||['晨光輕輕落下','把陽光留給你','晚霞也慢了下來','今晚也有一盞燈'][time]}</p></div>
   </aside>
  </main>;
 }

@@ -1,0 +1,37 @@
+{
+  "generator": "Built-in image_gen",
+  "characterSpec": "小豬是男生、小熊貓（黑白熊貓）是女生；兩隻都小巧圓潤，體型接近，熊貓略小。",
+  "basePrompt": "Use case: illustration-story. One landscape 3:2 background illustration for a cozy diary website. Soft painterly storybook environment, detailed fluffy plush fur, expressive tender faces, beautiful natural lighting, rich gentle colors. Character identity: a TINY pink pig BOY and a TINY black-and-white panda GIRL (not red panda). They are nearly the same size, but the pig MUST be visibly about 10% LARGER than the panda in both head and body. Both are round, short-limbed miniature plush companions. The panda's head MUST NOT be larger than the pig's head. Equal companions, affectionate and playful, reciprocal care, never parent and child. No bows, exaggerated eyelashes, clothing used as gender stereotypes, human body, adult-sized animals. Composition: LEFT HALF is calm low-detail wall or atmosphere for diary content; BOTH characters and the activity together on RIGHT third, heads at similar vertical level around 65% image height, characters fully visible. Works as a shallow mobile crop around 72% height. No text, letters, logos, UI, border, collage, watermark. ",
+  "scenes": [
+    {
+      "id": "rainy-reading",
+      "title": "雨天讀書",
+      "description": "Both the tiny pink pig boy and the slightly smaller tiny panda girl sit upright together on a cushion at the SAME depth, with the pig's head clearly 10% bigger. The pig boy holds an open illustrated storybook and the smaller panda girl leans toward him to read the same pages; one cream knitted blanket covers their laps equally. Rain droplets on an arched cottage window, ceramic mug nearby. Cool slate blue, cream white, warm golden lamplight. Quiet rainy afternoon."
+    },
+    {
+      "id": "baking-together",
+      "title": "廚房小事故",
+      "description": "A small round pink pig with a little flour on its snout rolls cookie dough, while a small fluffy black-and-white panda carefully holds a tray of freshly baked cookies wearing oven mitts. Cozy cottage kitchen, mint green cabinets and peach gingham towel. Cream yellow, apricot, mint green. Playful warm morning."
+    },
+    {
+      "id": "afternoon-painting",
+      "title": "午後畫畫",
+      "description": "A small round pink pig enthusiastically paints at a tiny easel while a small fluffy black-and-white panda sits proudly posing with a flower tucked beside one ear. Scattered crayons and little watercolor pots nearby, cozy cottage art nook by a window. Pastel sky blue, dusty rose, soft lilac. Creative gentle afternoon."
+    },
+    {
+      "id": "picnic-breeze",
+      "title": "郊外野餐",
+      "description": "A small round pink pig lies happily on a picnic blanket holding a strawberry, while a small fluffy black-and-white panda reaches to catch a cloth napkin lifting in the breeze. Meadow by the cottage and a quiet lake, wicker picnic basket. Fresh grass green, powder blue, strawberry red accents. Bright airy outdoor picnic."
+    },
+    {
+      "id": "stargazing",
+      "title": "夜裡看星星",
+      "description": "A small round pink pig and a small fluffy black-and-white panda sit side by side, viewed from a gentle rear three-quarter angle with their profiles visible, sharing a steaming mug and looking through an open cottage window at a starry sky and crescent moon. Indigo blue, silver gray, small amber lantern. Quiet intimate evening."
+    },
+    {
+      "id": "quiet-company",
+      "title": "各自的小日子",
+      "description": "A small fluffy black-and-white panda waters a potted fern with a little watering can while a small round pink pig sits nearby writing in a notebook with a pencil. They are each doing their own activity in the same cozy cottage corner, glancing affectionately toward one another. Terracotta orange, sage green, warm ivory. Peaceful everyday companionship."
+    }
+  ]
+}
