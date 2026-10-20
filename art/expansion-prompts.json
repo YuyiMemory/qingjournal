@@ -379,6 +379,60 @@
       "season": 1,
       "time": 2,
       "position": "82% 42%"
+    },
+    {
+      "id": "rainbow-puddle",
+      "title": "雨後的小彩虹",
+      "caption": "雨停了，驚喜也來了",
+      "description": "Pig and panda crouch close looking at a tiny rainbow reflection in a garden puddle, panda gently points while pig holds a small folded umbrella. Clear aqua, fresh mint, pastel rainbow accents, fresh after-rain light.",
+      "season": 3,
+      "time": 2,
+      "position": "82% 42%"
+    },
+    {
+      "id": "snowy-window",
+      "title": "雪落在窗外",
+      "caption": "裡面暖暖的，外面靜靜的",
+      "description": "Pig and panda stand on the same cushioned bench looking through a snowy cottage window, panda holds a warm mug and pig tucks a shared blanket around their shoulders. Icy blue, dove gray and warm apricot glow.",
+      "season": 3,
+      "time": 2,
+      "position": "82% 42%"
+    },
+    {
+      "id": "storm-lantern",
+      "title": "雨夜的小燈",
+      "caption": "把一點安心，放在你旁邊",
+      "description": "Both tiny companions sit calmly together by a gently glowing lantern during a rainy evening, pig passes panda a small soft cushion. Deep blue-gray, warm ochre and ivory, safe peaceful cottage interior, no fear.",
+      "season": 3,
+      "time": 2,
+      "position": "82% 42%"
+    },
+    {
+      "id": "misty-morning",
+      "title": "霧裡的早安",
+      "caption": "今天的世界，輕輕柔柔的",
+      "description": "They sit together on a cottage doorstep holding two tiny mugs and watching a misty garden, pig is slightly larger and panda leans softly toward him. Muted eucalyptus green, silver gray and pale peach morning light.",
+      "season": 3,
+      "time": 2,
+      "position": "82% 42%"
+    },
+    {
+      "id": "cloud-watching",
+      "title": "雲朵像什麼",
+      "caption": "你的想像，我也想一起看",
+      "description": "Both tiny companions recline on a broad garden cushion looking up, panda points out a softly shaped cloud while pig smiles. Powder blue, cream clouds, muted lilac and meadow green, open airy afternoon.",
+      "season": 3,
+      "time": 2,
+      "position": "82% 42%"
+    },
+    {
+      "id": "shared-umbrella",
+      "title": "同一把傘下",
+      "caption": "有雨，也有你",
+      "description": "Pig and panda stand side by side under one small broad umbrella, pig holds the handle while panda holds a little bag of flowers, both dry and happy. Dusty yellow umbrella, cool blue rain and sage leaves, quiet cottage path.",
+      "season": 3,
+      "time": 2,
+      "position": "82% 42%"
     }
   ]
 }

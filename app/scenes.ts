@@ -383,6 +383,54 @@ export const scenes = [
     "season": 1,
     "time": 2,
     "position": "82% 42%"
+  },
+  {
+    "id": "rainbow-puddle",
+    "title": "雨後的小彩虹",
+    "caption": "雨停了，驚喜也來了",
+    "season": 3,
+    "time": 2,
+    "position": "82% 42%"
+  },
+  {
+    "id": "snowy-window",
+    "title": "雪落在窗外",
+    "caption": "裡面暖暖的，外面靜靜的",
+    "season": 3,
+    "time": 2,
+    "position": "82% 42%"
+  },
+  {
+    "id": "storm-lantern",
+    "title": "雨夜的小燈",
+    "caption": "把一點安心，放在你旁邊",
+    "season": 3,
+    "time": 2,
+    "position": "82% 50%"
+  },
+  {
+    "id": "misty-morning",
+    "title": "霧裡的早安",
+    "caption": "今天的世界，輕輕柔柔的",
+    "season": 3,
+    "time": 2,
+    "position": "82% 50%"
+  },
+  {
+    "id": "cloud-watching",
+    "title": "雲朵像什麼",
+    "caption": "你的想像，我也想一起看",
+    "season": 3,
+    "time": 2,
+    "position": "82% 68%"
+  },
+  {
+    "id": "shared-umbrella",
+    "title": "同一把傘下",
+    "caption": "有雨，也有你",
+    "season": 3,
+    "time": 2,
+    "position": "82% 58%"
   }
 ];
 
