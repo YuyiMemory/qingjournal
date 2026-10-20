@@ -109,6 +109,60 @@
       "season": 0,
       "time": 1,
       "position": "82% 42%"
+    },
+    {
+      "id": "planting-flowers",
+      "title": "種下一點春天",
+      "caption": "把期待種進泥土裡",
+      "description": "They plant small flower seedlings into a terracotta pot, pig scoops soil with a tiny trowel while panda gently holds the seedling. Cottage potting bench on right, sage green, pale peach, warm ivory, spring sunlight.",
+      "season": 0,
+      "time": 2,
+      "position": "82% 42%"
+    },
+    {
+      "id": "greenhouse-morning",
+      "title": "溫室的早晨",
+      "caption": "新長出的葉子，也想給你看",
+      "description": "Pig shows panda a fresh small leaf on a seedling inside a glass greenhouse; panda leans close with delighted curiosity. Glass reflections, pale emerald, soft lemon yellow, cool clear morning light.",
+      "season": 0,
+      "time": 2,
+      "position": "82% 42%"
+    },
+    {
+      "id": "herb-harvest",
+      "title": "香草的小收成",
+      "caption": "收下一把清清香香的日子",
+      "description": "Panda carefully clips sprigs of mint while pig holds a little basket, tiny companions on a cottage herb-garden path. Fresh mint, muted lavender, natural wicker beige, dappled afternoon sun.",
+      "season": 0,
+      "time": 2,
+      "position": "82% 42%"
+    },
+    {
+      "id": "butterfly-visit",
+      "title": "蝴蝶來作客",
+      "caption": "安靜一點，幸福就靠近了",
+      "description": "Both tiny companions crouch side by side watching a butterfly resting on a daisy, pig slightly larger. Peaceful cottage flower patch, powder blue, pale violet, sunny yellow, soft spring daylight.",
+      "season": 0,
+      "time": 2,
+      "position": "82% 42%"
+    },
+    {
+      "id": "sunflower-shade",
+      "title": "向日葵的影子",
+      "caption": "把陽光借來陪你坐一會",
+      "description": "Pig holds a large sunflower leaf like a little parasol over them while panda sits close on a garden bench with a small notebook. Sunflower gold, sky blue, muted leaf green, cheerful summer midday.",
+      "season": 0,
+      "time": 2,
+      "position": "82% 42%"
+    },
+    {
+      "id": "garden-watering",
+      "title": "花園的傍晚",
+      "caption": "一起照顧，慢慢長大",
+      "description": "They water a line of little flowerpots together using two small watering cans, pig's can just slightly bigger. Cottage courtyard with pots on right, muted coral, dusty teal and violet-blue evening shadows.",
+      "season": 0,
+      "time": 2,
+      "position": "82% 42%"
     }
   ]
 }

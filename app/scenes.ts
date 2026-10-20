@@ -143,6 +143,54 @@ export const scenes = [
     "season": 0,
     "time": 1,
     "position": "82% 53%"
+  },
+  {
+    "id": "planting-flowers",
+    "title": "種下一點春天",
+    "caption": "把期待種進泥土裡",
+    "season": 0,
+    "time": 2,
+    "position": "82% 35%"
+  },
+  {
+    "id": "greenhouse-morning",
+    "title": "溫室的早晨",
+    "caption": "新長出的葉子，也想給你看",
+    "season": 0,
+    "time": 2,
+    "position": "82% 58%"
+  },
+  {
+    "id": "herb-harvest",
+    "title": "香草的小收成",
+    "caption": "收下一把清清香香的日子",
+    "season": 0,
+    "time": 2,
+    "position": "82% 50%"
+  },
+  {
+    "id": "butterfly-visit",
+    "title": "蝴蝶來作客",
+    "caption": "安靜一點，幸福就靠近了",
+    "season": 0,
+    "time": 2,
+    "position": "82% 62%"
+  },
+  {
+    "id": "sunflower-shade",
+    "title": "向日葵的影子",
+    "caption": "把陽光借來陪你坐一會",
+    "season": 0,
+    "time": 2,
+    "position": "82% 48%"
+  },
+  {
+    "id": "garden-watering",
+    "title": "花園的傍晚",
+    "caption": "一起照顧，慢慢長大",
+    "season": 0,
+    "time": 2,
+    "position": "82% 50%"
   }
 ];
 
