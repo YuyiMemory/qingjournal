@@ -325,6 +325,60 @@
       "season": 0,
       "time": 2,
       "position": "82% 42%"
+    },
+    {
+      "id": "train-window",
+      "title": "火車靠窗的位置",
+      "caption": "沿途的風景，都想和你分享",
+      "description": "Pig and panda sit close together on a cushioned train window seat, panda points to a distant hill while pig holds their tiny woven bag. Calm low-detail carriage left, teal upholstery, powder-blue landscape and amber wood.",
+      "season": 1,
+      "time": 2,
+      "position": "82% 42%"
+    },
+    {
+      "id": "camping-breakfast",
+      "title": "帳篷前的早餐",
+      "caption": "山裡的早晨，慢慢醒來",
+      "description": "Both tiny companions sit outside a small canvas tent sharing breakfast from a picnic box, pig passes panda a little bread roll. Sage green, oatmeal canvas, pale golden mist, peaceful campsite morning.",
+      "season": 1,
+      "time": 2,
+      "position": "82% 42%"
+    },
+    {
+      "id": "mountain-overlook",
+      "title": "山頂的小休息",
+      "caption": "走到這裡，剛好有你",
+      "description": "Pig and panda rest shoulder to shoulder on a broad flat rock at a safe grassy mountain overlook, panda offers pig a small water bottle. Hazy periwinkle hills, sage green, pale peach sky, soft sunset.",
+      "season": 1,
+      "time": 2,
+      "position": "82% 42%"
+    },
+    {
+      "id": "lighthouse-view",
+      "title": "遠方的燈塔",
+      "caption": "一起看海，等風慢下來",
+      "description": "Both tiny companions stand beside a low seaside cottage fence looking toward a distant lighthouse, pig holds a little nautical map with no writing while panda points to the sea. Soft navy, seafoam and shell white.",
+      "season": 1,
+      "time": 2,
+      "position": "82% 42%"
+    },
+    {
+      "id": "bookshop-corner",
+      "title": "小書店的一角",
+      "caption": "找到一本，也找到一段安靜",
+      "description": "Pig hands a small unlettered book from a low shelf to panda, who holds another book close, in a cozy tiny bookshop corner with all spines blank. Dusty burgundy, muted forest green and warm cream, golden lamp.",
+      "season": 1,
+      "time": 2,
+      "position": "82% 42%"
+    },
+    {
+      "id": "quiet-cafe",
+      "title": "咖啡館的慢午後",
+      "caption": "一杯熱飲，一個有你的下午",
+      "description": "They sit beside each other on a cottage cafe bench sharing a small pastry, panda pours tea while pig holds the saucer. Smoky blue, cafe cream and caramel, soft rainy window light, no signage or text.",
+      "season": 1,
+      "time": 2,
+      "position": "82% 42%"
     }
   ]
 }

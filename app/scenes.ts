@@ -335,6 +335,54 @@ export const scenes = [
     "season": 0,
     "time": 2,
     "position": "82% 50%"
+  },
+  {
+    "id": "train-window",
+    "title": "火車靠窗的位置",
+    "caption": "沿途的風景，都想和你分享",
+    "season": 1,
+    "time": 2,
+    "position": "82% 50%"
+  },
+  {
+    "id": "camping-breakfast",
+    "title": "帳篷前的早餐",
+    "caption": "山裡的早晨，慢慢醒來",
+    "season": 1,
+    "time": 2,
+    "position": "82% 50%"
+  },
+  {
+    "id": "mountain-overlook",
+    "title": "山頂的小休息",
+    "caption": "走到這裡，剛好有你",
+    "season": 1,
+    "time": 2,
+    "position": "82% 50%"
+  },
+  {
+    "id": "lighthouse-view",
+    "title": "遠方的燈塔",
+    "caption": "一起看海，等風慢下來",
+    "season": 1,
+    "time": 2,
+    "position": "82% 58%"
+  },
+  {
+    "id": "bookshop-corner",
+    "title": "小書店的一角",
+    "caption": "找到一本，也找到一段安靜",
+    "season": 1,
+    "time": 2,
+    "position": "82% 58%"
+  },
+  {
+    "id": "quiet-cafe",
+    "title": "咖啡館的慢午後",
+    "caption": "一杯熱飲，一個有你的下午",
+    "season": 1,
+    "time": 2,
+    "position": "82% 42%"
   }
 ];
 
