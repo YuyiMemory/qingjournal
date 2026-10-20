@@ -431,6 +431,54 @@ export const scenes = [
     "season": 3,
     "time": 2,
     "position": "82% 58%"
+  },
+  {
+    "id": "birthday-surprise",
+    "title": "小小生日驚喜",
+    "caption": "把今天的快樂，全部給你",
+    "season": 2,
+    "time": 3,
+    "position": "82% 34%"
+  },
+  {
+    "id": "mooncake-evening",
+    "title": "月亮與小點心",
+    "caption": "今晚的圓滿，是一起分享",
+    "season": 2,
+    "time": 3,
+    "position": "82% 50%"
+  },
+  {
+    "id": "pumpkin-painting",
+    "title": "南瓜的新表情",
+    "caption": "一起畫一點可愛的秋天",
+    "season": 2,
+    "time": 3,
+    "position": "82% 42%"
+  },
+  {
+    "id": "gift-wrapping",
+    "title": "悄悄包好心意",
+    "caption": "小禮物裡，是滿滿的你",
+    "season": 2,
+    "time": 3,
+    "position": "82% 34%"
+  },
+  {
+    "id": "winter-cookies",
+    "title": "冬天的星星餅乾",
+    "caption": "把冷冷的日子，烤得暖一點",
+    "season": 2,
+    "time": 3,
+    "position": "82% 42%"
+  },
+  {
+    "id": "fairy-light-evening",
+    "title": "掛起小小星光",
+    "caption": "把普通的夜晚，點亮一點",
+    "season": 2,
+    "time": 3,
+    "position": "82% 50%"
   }
 ];
 

@@ -433,6 +433,60 @@
       "season": 3,
       "time": 2,
       "position": "82% 42%"
+    },
+    {
+      "id": "birthday-surprise",
+      "title": "小小生日驚喜",
+      "caption": "把今天的快樂，全部給你",
+      "description": "Panda presents a tiny single-candle cupcake to pig, who looks delighted, both seated close at a cottage table. Warm coral, butter cream and muted turquoise, joyful gentle light, no writing or numbers.",
+      "season": 2,
+      "time": 3,
+      "position": "82% 42%"
+    },
+    {
+      "id": "mooncake-evening",
+      "title": "月亮與小點心",
+      "caption": "今晚的圓滿，是一起分享",
+      "description": "They share a small mooncake on a little plate beside an open cottage window with a full moon, pig cuts it into two and panda sets out two cups. Deep ink blue, antique gold and warm ivory, peaceful moonlit evening.",
+      "season": 2,
+      "time": 3,
+      "position": "82% 42%"
+    },
+    {
+      "id": "pumpkin-painting",
+      "title": "南瓜的新表情",
+      "caption": "一起畫一點可愛的秋天",
+      "description": "Pig paints a simple small flower on a little pumpkin while panda holds a paint pot and giggles, a second plain pumpkin nearby. Burnt orange, muted teal, cream and aubergine shadows, autumn cottage porch.",
+      "season": 2,
+      "time": 3,
+      "position": "82% 42%"
+    },
+    {
+      "id": "gift-wrapping",
+      "title": "悄悄包好心意",
+      "caption": "小禮物裡，是滿滿的你",
+      "description": "They wrap a small gift together, panda holds plain sage paper while pig ties a simple cream ribbon around the box. Sage green, dusty rose and kraft brown, cozy cottage craft corner, no tags or writing.",
+      "season": 2,
+      "time": 3,
+      "position": "82% 42%"
+    },
+    {
+      "id": "winter-cookies",
+      "title": "冬天的星星餅乾",
+      "caption": "把冷冷的日子，烤得暖一點",
+      "description": "Pig and panda carefully decorate little star-shaped cookies together with white icing, pig holds a tiny spoon and panda sets a finished cookie on a plate. Frost blue, cream and cranberry accents, cozy winter kitchen.",
+      "season": 2,
+      "time": 3,
+      "position": "82% 42%"
+    },
+    {
+      "id": "fairy-light-evening",
+      "title": "掛起小小星光",
+      "caption": "把普通的夜晚，點亮一點",
+      "description": "Both tiny companions sit side by side hanging a short strand of warm fairy lights along a low cottage window ledge, pig holds the wire while panda clips one light in place. Deep plum, muted navy and soft amber, magical gentle evening.",
+      "season": 2,
+      "time": 3,
+      "position": "82% 42%"
     }
   ]
 }
