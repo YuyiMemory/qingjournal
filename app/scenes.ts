@@ -95,6 +95,54 @@ export const scenes = [
     "season": 0,
     "time": 1,
     "position": "82% 60%"
+  },
+  {
+    "id": "strawberry-cake",
+    "title": "草莓小蛋糕",
+    "caption": "今天的甜，分你一半",
+    "season": 0,
+    "time": 1,
+    "position": "82% 34%"
+  },
+  {
+    "id": "noodle-soup",
+    "title": "暖暖的一碗麵",
+    "caption": "有你在，連晚餐都很暖",
+    "season": 0,
+    "time": 1,
+    "position": "82% 34%"
+  },
+  {
+    "id": "jam-toast",
+    "title": "果醬吐司",
+    "caption": "把莓果香留在早晨",
+    "season": 0,
+    "time": 1,
+    "position": "82% 40%"
+  },
+  {
+    "id": "apple-pie",
+    "title": "蘋果派出爐",
+    "caption": "香氣裡，有我們的小日常",
+    "season": 0,
+    "time": 1,
+    "position": "82% 34%"
+  },
+  {
+    "id": "making-dumplings",
+    "title": "包一點幸福",
+    "caption": "把小小心意包進晚餐",
+    "season": 0,
+    "time": 1,
+    "position": "82% 50%"
+  },
+  {
+    "id": "cocoa-clouds",
+    "title": "可可上的雲朵",
+    "caption": "今天適合加一顆棉花糖",
+    "season": 0,
+    "time": 1,
+    "position": "82% 53%"
   }
 ];
 

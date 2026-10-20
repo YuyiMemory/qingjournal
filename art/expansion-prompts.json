@@ -55,6 +55,60 @@
       "season": 0,
       "time": 1,
       "position": "82% 42%"
+    },
+    {
+      "id": "strawberry-cake",
+      "title": "草莓小蛋糕",
+      "caption": "今天的甜，分你一半",
+      "description": "They decorate a tiny strawberry cake together, pig carefully spreads cream while panda places one strawberry on top. Cream white, strawberry pink and mint accents, bright cottage baking nook.",
+      "season": 0,
+      "time": 1,
+      "position": "82% 42%"
+    },
+    {
+      "id": "noodle-soup",
+      "title": "暖暖的一碗麵",
+      "caption": "有你在，連晚餐都很暖",
+      "description": "Pig carries a small bowl of noodle soup toward panda, who arranges two spoons on a low table; visible steam, cozy cottage dining corner. Warm terracotta, seafoam green and ivory, dusk.",
+      "season": 0,
+      "time": 1,
+      "position": "82% 42%"
+    },
+    {
+      "id": "jam-toast",
+      "title": "果醬吐司",
+      "caption": "把莓果香留在早晨",
+      "description": "Panda spreads red berry jam onto toast while pig holds a little plate for her, equal happy cooperation. Whitewashed cottage kitchen, cobalt ceramic jars, berry red and cream, soft blue morning.",
+      "season": 0,
+      "time": 1,
+      "position": "82% 42%"
+    },
+    {
+      "id": "apple-pie",
+      "title": "蘋果派出爐",
+      "caption": "香氣裡，有我們的小日常",
+      "description": "Pig and panda admire a small freshly baked apple pie cooling on a window ledge, panda wafts the aroma gently while pig holds a tiny oven cloth. Cinnamon brown, apple green, golden ochre, autumn sunshine.",
+      "season": 0,
+      "time": 1,
+      "position": "82% 42%"
+    },
+    {
+      "id": "making-dumplings",
+      "title": "包一點幸福",
+      "caption": "把小小心意包進晚餐",
+      "description": "Both tiny companions sit together making dumplings, pig has made a charmingly crooked dumpling and panda gently compares it with hers. Sage and ivory kitchen, pale jade dishes, soft warm daylight.",
+      "season": 0,
+      "time": 1,
+      "position": "82% 42%"
+    },
+    {
+      "id": "cocoa-clouds",
+      "title": "可可上的雲朵",
+      "caption": "今天適合加一顆棉花糖",
+      "description": "Panda drops a marshmallow into pig's mug of cocoa while pig holds a matching second mug for her, both tiny and equally cute. Dusty rose, chocolate brown and cream, rainy cottage evening.",
+      "season": 0,
+      "time": 1,
+      "position": "82% 42%"
     }
   ]
 }
