@@ -19,6 +19,7 @@ export default function Home({canWrite=false,onLock=()=>{}}:{canWrite?:boolean;o
  const current=useRef<DiaryEntry[]>([]),alive=useRef(true),saving=useRef(false),paused=useRef(false);
  const [hasDrafts,setHasDrafts]=useState(canWrite&&pendingDrafts.size>0),[saveFailed,setSaveFailed]=useState(false),[reload,setReload]=useState(0);
  const [communityBusy,setCommunityBusy]=useState(false);
+ const [loadedReload,setLoadedReload]=useState(-1);
  const interactionBusy=useRef(false);
  useEffect(()=>{alive.current=true;let cancelled=false;void (async()=>{
   setWriteDate(localToday());setMonth(localToday().slice(0,7));setWritingReady(false);setLoaded(false);
@@ -28,7 +29,7 @@ export default function Home({canWrite=false,onLock=()=>{}}:{canWrite?:boolean;o
    const cloud=await api<{entries:DiaryEntry[];canWrite:boolean}>('read-diaries',{visitorId:id});if(cancelled)return;
    const display=canWrite?cloud.entries.map(e=>pendingDrafts.get(e.id)||e):cloud.entries;
    if(canWrite)for(const draft of pendingDrafts.values())if(!display.some(e=>e.id===draft.id))display.push(draft);
-   current.current=display;setEntries(display);setEditId(display[0]?.id||'');setSelected(value=>display.some(e=>e.id===value)?value:(display[0]?.id||''));
+   current.current=display;setEntries(display);setEditId(display[0]?.id||'');setSelected(value=>display.some(e=>e.id===value)?value:(display[0]?.id||''));setLoadedReload(reload);
    setWritingReady(canWrite&&cloud.canWrite);setSaveState('✓ 已載入 Google 試算表');setError('');
    if(canWrite&&pendingDrafts.size){paused.current=true;setSaveFailed(true);setError('有尚未同步的草稿。請先下載備份，再決定重試或重新載入。');}
   }catch(err){if(!cancelled){setError(err instanceof Error?err.message:'日記暫時無法載入。');setSaveState('讀取失敗');}}
@@ -80,6 +81,20 @@ export default function Home({canWrite=false,onLock=()=>{}}:{canWrite?:boolean;o
  function comment(id:string){const text=(drafts[id]||'').trim();if(!text||!loaded||interactionBusy.current)return;interactionBusy.current=true;setCommunityBusy(true);void (async()=>{try{const result=await api<{comment:{text:string;date:string}}>('comment',{visitorId:visitorId.current,entryId:id,text,requestId:crypto.randomUUID()});if(alive.current){setData(d=>({...d,comments:{...d.comments,[id]:[...(d.comments[id]||[]),result.comment]}}));setDrafts(d=>({...d,[id]:''}));setError('');}}catch(err){if(alive.current)setError(err instanceof Error?err.message:'留言結果未確認，請重新載入後確認。');}finally{interactionBusy.current=false;if(alive.current)setCommunityBusy(false);}})();}
  const matching=entries.filter(e=>!query||`${e.body}${e.date}`.includes(query));
  const shown=matching.find(e=>e.id===selected)||matching[0];
+ const viewedId=mode==='read'&&loadedReload===reload?shown?.id:undefined;
+ const lastView=useRef('');
+ useEffect(()=>{
+  if(!viewedId){lastView.current='';return;}
+  const record=()=>{
+   if(document.visibilityState!=='visible'||!visitorId.current)return;
+   const key=`${reload}:${viewedId}`;
+   if(lastView.current===key)return;
+   lastView.current=key;
+   void api('view-diary',{visitorId:visitorId.current,entryId:viewedId}).catch(()=>{/* Logging must not interrupt reading. */});
+  };
+  record();document.addEventListener('visibilitychange',record);
+  return()=>document.removeEventListener('visibilitychange',record);
+ },[viewedId,reload]);
  const visible=shown?[shown]:[];
  const shownIndex=shown?matching.findIndex(e=>e.id===shown.id):-1;
  const newer=shownIndex>0?matching[shownIndex-1]:null,older=shownIndex>=0&&shownIndex<matching.length-1?matching[shownIndex+1]:null;

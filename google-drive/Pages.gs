@@ -3,7 +3,7 @@
 // All helpers end in _ so google.script.run cannot invoke them directly.
 const PAGES_ORIGIN = 'https://yuyimemory.github.io';
 const PAGES_TABS = {diaries:'日記小屋_日記',comments:'日記小屋_留言',hearts:'日記小屋_愛心',logs:'日記小屋_紀錄'};
-const PAGES_LOG_HEADER = ['時間（UTC+8）','動作','角色','訪客','筆數'];
+const PAGES_LOG_HEADER = ['時間（UTC+8）','動作','角色','訪客','日記（日期／ID）'];
 
 // Run manually once after setting the three properties described in README.
 function setupCottage_() {
@@ -86,12 +86,14 @@ function visitor_(v){return text_(v,80)&&/^[a-zA-Z0-9-]{8,80}$/.test(v)?v:'';}
 // Taipei has had no daylight saving since 1980, so a flat +8 hour shift is exact and needs no script timezone setting.
 function stamp_(){return new Date(Date.now()+8*3600*1000).toISOString().replace('T',' ').slice(0,19);}
 // Append-only read log. Never throws: a full, missing or renamed log tab must not block reading the diary.
-// Every value written here is server-generated or matched against the visitor pattern, so no cell can start a formula.
-function log_(book,action,role,visitor,count){
+// The entry label starts with fixed text, so even legacy IDs cannot become formulas.
+function log_(book,action,role,visitor,entry){
   try{
     const sheet=book.getSheetByName(PAGES_TABS.logs);
     if(!sheet)return;
-    sheet.appendRow([stamp_(),action,role,visitor,Number(count)||0]);
+    const heading=sheet.getRange(1,5);
+    if(heading.getValue()==='筆數')heading.setValue(PAGES_LOG_HEADER[4]);
+    sheet.appendRow([stamp_(),action,role,visitor,'日記：'+String(entry[2])+' / ID：'+String(entry[0])]);
   }catch(error){}
 }
 
@@ -110,8 +112,14 @@ function cottageRequest(input){
     const book=SpreadsheetApp.openById(c.sheet),diarySheet=book.getSheetByName(PAGES_TABS.diaries),diaries=rows_(diarySheet,12);
     if(input.action==='read-diaries'){
       const entries=diaries.filter(r=>r[8]==='public'||(isOwner&&r[1]===c.ownerId)).map(entry_).sort((a,b)=>b.iso.localeCompare(a.iso));
-      log_(book,'read-diaries',session.role,visitor_(input.visitorId),entries.length);
       return reply_({entries:entries,canWrite:isOwner});
+    }
+    if(input.action==='view-diary'){
+      const visitor=visitor_(input.visitorId);if(!visitor)fail_('缺少訪客識別。',400);
+      const entry=diaries.find(r=>String(r[0])===input.entryId&&(r[8]==='public'||(isOwner&&r[1]===c.ownerId)));
+      if(!entry)fail_('找不到日記。',404);
+      log_(book,'view-diary',session.role,visitor,entry);
+      return reply_({logged:true});
     }
     if(input.action==='save-diaries'){
       if(!Array.isArray(input.entries)||input.entries.length>500)fail_('日記格式不正確。',400);
