@@ -623,6 +623,54 @@ export const scenes = [
     "season": 1,
     "time": 2,
     "position": "82% 50%"
+  },
+  {
+    "id": "mushroom-rain-shelter",
+    "title": "蘑菇傘下",
+    "caption": "小小的地方，也能裝下我們",
+    "season": 0,
+    "time": 2,
+    "position": "82% 50%"
+  },
+  {
+    "id": "leaf-boat-journey",
+    "title": "葉子船出發",
+    "caption": "順著小溪，去找下一個驚喜",
+    "season": 0,
+    "time": 2,
+    "position": "82% 50%"
+  },
+  {
+    "id": "giant-flower-nap",
+    "title": "花瓣裡的小憩",
+    "caption": "今天睡在一朵花的懷裡",
+    "season": 0,
+    "time": 2,
+    "position": "82% 50%"
+  },
+  {
+    "id": "tree-hollow-home",
+    "title": "樹洞裡的小屋",
+    "caption": "推開一扇，剛剛好的小門",
+    "season": 0,
+    "time": 2,
+    "position": "82% 50%"
+  },
+  {
+    "id": "cloud-island-picnic",
+    "title": "雲朵上的野餐",
+    "caption": "把平凡的一天，帶到天空去",
+    "season": 0,
+    "time": 2,
+    "position": "82% 50%"
+  },
+  {
+    "id": "acorn-balloon",
+    "title": "橡果熱氣球",
+    "caption": "一起升起，去看更遠的風景",
+    "season": 0,
+    "time": 2,
+    "position": "82% 50%"
   }
 ];
 

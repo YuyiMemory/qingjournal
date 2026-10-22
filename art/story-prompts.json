@@ -206,6 +206,72 @@
       "season": 1,
       "time": 2,
       "position": "82% 50%"
+    },
+    {
+      "id": "mushroom-rain-shelter",
+      "title": "蘑菇傘下",
+      "caption": "小小的地方，也能裝下我們",
+      "description": "Two miniature companions huddle happily side by side beneath one broad mushroom cap sheltering from soft rain, panda catches a droplet on a leaf and pig smiles. Enchanted woodland, muted teal, rose mushroom cap and soft green glow.",
+      "group": "fantasy",
+      "groupTitle": "迷你奇幻冒險",
+      "season": 0,
+      "time": 2,
+      "position": "82% 50%"
+    },
+    {
+      "id": "leaf-boat-journey",
+      "title": "葉子船出發",
+      "caption": "順著小溪，去找下一個驚喜",
+      "description": "They sit safely together in one broad cupped leaf boat drifting on a very shallow magical garden stream; pig paddles with a tiny twig, panda points toward glowing flowers. Both tiny with same-scale bodies. Jade, clear turquoise and soft lilac.",
+      "group": "fantasy",
+      "groupTitle": "迷你奇幻冒險",
+      "season": 0,
+      "time": 2,
+      "position": "82% 50%"
+    },
+    {
+      "id": "giant-flower-nap",
+      "title": "花瓣裡的小憩",
+      "caption": "今天睡在一朵花的懷裡",
+      "description": "Pig and panda rest together in the broad open petals of one enormous soft flower, both small fluffy companions with gentle sleepy smiles, whole flower and both bodies visible. Rose pink, lavender, pale mint and morning dew.",
+      "group": "fantasy",
+      "groupTitle": "迷你奇幻冒險",
+      "season": 0,
+      "time": 2,
+      "position": "82% 50%"
+    },
+    {
+      "id": "tree-hollow-home",
+      "title": "樹洞裡的小屋",
+      "caption": "推開一扇，剛剛好的小門",
+      "description": "They sit together at the entrance of a tiny cozy tree-hollow home, pig opens the little round wooden door while panda holds a miniature lantern. Moss, acorns and fern details. Warm honey wood, deep emerald and pale gold, no other inhabitants.",
+      "group": "fantasy",
+      "groupTitle": "迷你奇幻冒險",
+      "season": 0,
+      "time": 2,
+      "position": "82% 50%"
+    },
+    {
+      "id": "cloud-island-picnic",
+      "title": "雲朵上的野餐",
+      "caption": "把平凡的一天，帶到天空去",
+      "description": "They sit side by side on a softly glowing fantasy cloud island with a little picnic cloth and two tiny cups, panda offers pig a berry. Peaceful miniature floating garden, no falling or danger. Powder blue, peach-pink sky and soft silver-white.",
+      "group": "fantasy",
+      "groupTitle": "迷你奇幻冒險",
+      "season": 0,
+      "time": 2,
+      "position": "82% 50%"
+    },
+    {
+      "id": "acorn-balloon",
+      "title": "橡果熱氣球",
+      "caption": "一起升起，去看更遠的風景",
+      "description": "Both tiny companions sit securely together in a little acorn-shell basket suspended from a flower-petal hot air balloon, pig holds a small blank map, panda peeks at the forest below. Dreamy sage forest, plum, apricot and sky blue, wide scene.",
+      "group": "fantasy",
+      "groupTitle": "迷你奇幻冒險",
+      "season": 0,
+      "time": 2,
+      "position": "82% 50%"
     }
   ]
 }
