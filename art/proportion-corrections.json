@@ -1,0 +1,13 @@
+{
+  "generator": "Built-in image_gen",
+  "characterSpec": "小豬是男生，黑白小熊貓是女生；兩隻都是小小隻、體型幾乎相同，小熊貓僅略小。同姿勢與景深下，以小熊貓頭徑及身高約為小豬的95–98%為生圖目標，仍需逐張目視驗收。",
+  "prompt": "Use case: precise-object-edit. Edit target: the supplied diary illustration. Correct ONLY the relative character size. The pink pig BOY and black-and-white panda GIRL must look like two equally tiny, same-age companions with almost identical body scale. Panda's equivalent standing height and head diameter should be 95-98% of the pig's, barely perceptibly smaller. Shrink the oversized pig to match the panda, rather than enlarging both. The pig must never look like an adult next to a child. Account for sitting/standing poses and perspective, keep head scale and torso bulk nearly equal. Preserve both character identities, facial expression, action, paws interacting with objects, camera, entire environment, color palette, lighting, artistic medium, horizontal aspect ratio and composition. Seamlessly reconstruct only the small areas exposed by shrinking the pig. No text, watermark or extra characters. Both remain small, round and cute.",
+  "scenes": [
+    "rainy-reading",
+    "folding-laundry",
+    "noodle-soup",
+    "planting-flowers",
+    "greenhouse-morning",
+    "kite-in-meadow"
+  ]
+}
