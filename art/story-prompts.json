@@ -1,5 +1,11 @@
 {
   "generator": "Built-in image_gen",
+  "corrections": [
+    {
+      "sceneId": "little-bandage",
+      "prompt": "Edit this illustration with one targeted correction only: make the black-and-white panda girl smaller in both head and body, about 20% smaller than she currently is, keeping her seated on the same cushion plane. The pink pig boy must be slightly larger than the panda, about 10% larger overall, so both are nearly equal tiny miniature companions. Preserve pig's existing size, face, pose and offered paw. Keep panda carefully applying the same tiny bandage to his paw, adjusting her reaching paw naturally. Keep the entire cottage background, camera, lighting, colors, style, composition and crop unchanged. No parent-child scale, no extra characters, no text."
+    }
+  ],
   "defaultStyle": "Default medium for scenes without an explicit medium: soft painterly storybook environment, believable velvety plush fur on the two tiny animal companions, gentle cinematic natural lighting and tactile cottage textures. If a scene explicitly specifies watercolor, pencil, paper-cut, clay, gouache or pastel, fully follow that medium instead of realistic fur.",
   "basePrompt": "Use case: illustration-story. One landscape 3:2 background illustration for a cozy diary website, full-bleed single scene. Character bible: one tiny round pink pig BOY and one tiny black-and-white panda GIRL (not red panda). Both are miniature plush-like companions with short limbs, round bodies and expressive soft faces; nearly equal body sizes, panda only about 10% smaller than pig in head and body at the same depth. Neither is an adult large animal. Equal companions with reciprocal affection and playful expressions, no parent-child dynamic, no exaggerated eyelashes or gender accessories. Layout: keep the LEFT HALF quiet and low-detail for diary overlay. Both characters and their main interaction together in the RIGHT 40%, heads at similar height around 50-60% of canvas height; complete small bodies about 30% of canvas height. Keep faces close together and readable in a shallow phone banner crop. No letters, writing, signage text, numbers, watermark, logos, UI, borders, collage. ",
   "scenes": [
@@ -132,6 +138,72 @@
       "group": "care",
       "groupTitle": "互相照顧",
       "season": 3,
+      "time": 2,
+      "position": "82% 50%"
+    },
+    {
+      "id": "taiwan-egg-cakes",
+      "title": "老街的雞蛋糕",
+      "caption": "這一口，想和你一起吃",
+      "description": "They share animal-shaped Taiwanese egg cakes from a small plain paper bag on an old Taiwanese brick street, pig offers a cake to panda. Warm red brick, turquoise shutters, subtle traditional arcade architecture, no readable signage, afternoon.",
+      "group": "taiwan",
+      "groupTitle": "台灣小旅行",
+      "season": 1,
+      "time": 2,
+      "position": "82% 50%"
+    },
+    {
+      "id": "taiwan-coast-train",
+      "title": "海邊等一班火車",
+      "caption": "等車的時間，也有海風陪著",
+      "description": "They sit close on a small bench at a quiet Taiwanese seaside railway platform, a distant local train and Pacific coast visible. Panda points toward train, pig holds a tiny travel bag. Ocean turquoise, pale blue and sunlit cream, no readable signs.",
+      "group": "taiwan",
+      "groupTitle": "台灣小旅行",
+      "season": 1,
+      "time": 2,
+      "position": "82% 50%"
+    },
+    {
+      "id": "taiwan-arcade-rain",
+      "title": "騎樓下躲雨",
+      "caption": "雨下慢一點，我們就多待一會",
+      "description": "Both tiny companions sit safely under a Taiwanese old-shop arcade looking out at a brief summer shower, sharing a dry small towel. Terrazzo pavement, tiled columns, potted plants. Cool teal rain, terracotta tile and warm yellow interior glow, no signs.",
+      "group": "taiwan",
+      "groupTitle": "台灣小旅行",
+      "season": 1,
+      "time": 2,
+      "position": "82% 50%"
+    },
+    {
+      "id": "taiwan-mountain-tea",
+      "title": "山城的一壺茶",
+      "caption": "山裡的霧，杯裡的暖",
+      "description": "Pig carefully pours tea into panda's tiny cup at a little mountain teahouse with Taiwan tea terraces and mist outside; subtle red lanterns to right. Moss green, slate gray, antique wood and muted red, no lettering.",
+      "group": "taiwan",
+      "groupTitle": "台灣小旅行",
+      "season": 1,
+      "time": 2,
+      "position": "82% 50%"
+    },
+    {
+      "id": "taiwan-nightmarket",
+      "title": "夜市的小玩具",
+      "caption": "把今晚的快樂撈回家",
+      "description": "They play a Taiwanese night-market floating toy-scoop game using small shallow scoops, panda proudly lifts one small rubber duck while pig holds their little basket. ONLY plastic toys in shallow basin, no animals. Pink, turquoise and golden lantern bokeh, no readable signs, quiet corner without crowd.",
+      "group": "taiwan",
+      "groupTitle": "台灣小旅行",
+      "season": 1,
+      "time": 2,
+      "position": "82% 50%"
+    },
+    {
+      "id": "taiwan-ricefield-ride",
+      "title": "稻田邊的小旅行",
+      "caption": "跟著風，騎過金色的下午",
+      "description": "Both ride two tiny appropriately scaled bicycles side by side on a flat Taiwanese rice-field lane, pig slightly larger, simple small helmets, gentle relaxed movement. Golden rice, distant green hills, blue sky and a few palms, no other characters.",
+      "group": "taiwan",
+      "groupTitle": "台灣小旅行",
+      "season": 1,
       "time": 2,
       "position": "82% 50%"
     }

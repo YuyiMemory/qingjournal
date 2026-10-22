@@ -575,6 +575,54 @@ export const scenes = [
     "season": 3,
     "time": 2,
     "position": "82% 50%"
+  },
+  {
+    "id": "taiwan-egg-cakes",
+    "title": "老街的雞蛋糕",
+    "caption": "這一口，想和你一起吃",
+    "season": 1,
+    "time": 2,
+    "position": "82% 50%"
+  },
+  {
+    "id": "taiwan-coast-train",
+    "title": "海邊等一班火車",
+    "caption": "等車的時間，也有海風陪著",
+    "season": 1,
+    "time": 2,
+    "position": "82% 50%"
+  },
+  {
+    "id": "taiwan-arcade-rain",
+    "title": "騎樓下躲雨",
+    "caption": "雨下慢一點，我們就多待一會",
+    "season": 1,
+    "time": 2,
+    "position": "82% 50%"
+  },
+  {
+    "id": "taiwan-mountain-tea",
+    "title": "山城的一壺茶",
+    "caption": "山裡的霧，杯裡的暖",
+    "season": 1,
+    "time": 2,
+    "position": "82% 50%"
+  },
+  {
+    "id": "taiwan-nightmarket",
+    "title": "夜市的小玩具",
+    "caption": "把今晚的快樂撈回家",
+    "season": 1,
+    "time": 2,
+    "position": "82% 50%"
+  },
+  {
+    "id": "taiwan-ricefield-ride",
+    "title": "稻田邊的小旅行",
+    "caption": "跟著風，騎過金色的下午",
+    "season": 1,
+    "time": 2,
+    "position": "82% 50%"
   }
 ];
 
