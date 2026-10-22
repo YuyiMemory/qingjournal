@@ -11,7 +11,7 @@
     }
   ],
   "defaultStyle": "Default medium for scenes without an explicit medium: soft painterly storybook environment, believable velvety plush fur on the two tiny animal companions, gentle cinematic natural lighting and tactile cottage textures. If a scene explicitly specifies watercolor, pencil, paper-cut, clay, gouache or pastel, fully follow that medium instead of realistic fur.",
-  "basePrompt": "Use case: illustration-story. One landscape 3:2 background illustration for a cozy diary website, full-bleed single scene. Character bible: one tiny round pink pig BOY and one tiny black-and-white panda GIRL (not red panda). Both are miniature plush-like companions with short limbs, round bodies and expressive soft faces; nearly equal body sizes, panda only about 10% smaller than pig in head and body at the same depth. Neither is an adult large animal. Equal companions with reciprocal affection and playful expressions, no parent-child dynamic, no exaggerated eyelashes or gender accessories. Layout: keep the LEFT HALF quiet and low-detail for diary overlay. Both characters and their main interaction together in the RIGHT 40%, heads at similar height around 50-60% of canvas height; complete small bodies about 30% of canvas height. Keep faces close together and readable in a shallow phone banner crop. No letters, writing, signage text, numbers, watermark, logos, UI, borders, collage. ",
+  "basePrompt": "Use case: illustration-story. One landscape 3:2 background illustration for a cozy diary website, full-bleed single scene. Character bible: one tiny round pink pig BOY and one tiny black-and-white panda GIRL (not red panda). Both are miniature plush-like companions with short limbs, round bodies and expressive soft faces; nearly equal body sizes, panda only about 10% smaller than pig in head and body at the same depth. Neither is an adult large animal. Equal companions with reciprocal affection and playful expressions, no parent-child dynamic, no exaggerated eyelashes or gender accessories. Layout: keep the LEFT HALF quiet and low-detail for diary overlay. Both characters and their main interaction together in the RIGHT 40%, heads at similar height around 50-60% of canvas height; complete small bodies about 30% of canvas height. Keep faces close together and readable in a shallow phone banner crop. No letters, writing, signage text, numbers, watermark, logos, UI, borders, collage.  Character scale acceptance rule: Both characters are tiny same-age companions of nearly identical size. The panda girl is only barely smaller: target 95-98% of the pig boy in equivalent standing height and head diameter at the same depth. No adult-child size difference. Validate visually after generation.",
   "scenes": [
     {
       "id": "cookie-caught",
@@ -409,5 +409,7 @@
       "time": 2,
       "position": "82% 50%"
     }
-  ]
+  ],
+  "characterSpec": "小豬男生、黑白小熊貓女生；兩隻都是小小隻，體型幾乎相同，小熊貓僅略小。",
+  "characterScaleRule": "Both characters are tiny same-age companions of nearly identical size. The panda girl is only barely smaller: target 95-98% of the pig boy in equivalent standing height and head diameter at the same depth. No adult-child size difference. Validate visually after generation."
 }

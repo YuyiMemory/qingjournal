@@ -1,7 +1,7 @@
 {
   "generator": "Built-in image_gen",
-  "characterSpec": "小豬是男生、小熊貓（黑白熊貓）是女生；兩隻都小巧圓潤，體型接近，熊貓略小。",
-  "basePrompt": "Use case: illustration-story. One landscape 3:2 background illustration for a cozy diary website. Soft painterly storybook environment, detailed fluffy plush fur, expressive tender faces, beautiful natural lighting, rich gentle colors. Character identity: a TINY pink pig BOY and a TINY black-and-white panda GIRL (not red panda). They are nearly the same size, but the pig MUST be visibly about 10% LARGER than the panda in both head and body. Both are round, short-limbed miniature plush companions. The panda's head MUST NOT be larger than the pig's head. Equal companions, affectionate and playful, reciprocal care, never parent and child. No bows, exaggerated eyelashes, clothing used as gender stereotypes, human body, adult-sized animals. Composition: LEFT HALF is calm low-detail wall or atmosphere for diary content; BOTH characters and the activity together on RIGHT third, heads at similar vertical level around 65% image height, characters fully visible. Works as a shallow mobile crop around 72% height. No text, letters, logos, UI, border, collage, watermark. ",
+  "characterSpec": "小豬男生、黑白小熊貓女生；兩隻都是小小隻，體型幾乎相同，小熊貓僅略小。",
+  "basePrompt": "Use case: illustration-story. One landscape 3:2 background illustration for a cozy diary website. Soft painterly storybook environment, detailed fluffy plush fur, expressive tender faces, beautiful natural lighting, rich gentle colors. Character identity: a TINY pink pig BOY and a TINY black-and-white panda GIRL (not red panda). They are nearly the same size, the panda is only barely smaller (95-98% of the pig in head diameter and equivalent standing height). Both are round, short-limbed miniature plush companions. The panda's head MUST NOT be larger than the pig's head. Equal companions, affectionate and playful, reciprocal care, never parent and child. No bows, exaggerated eyelashes, clothing used as gender stereotypes, human body, adult-sized animals. Composition: LEFT HALF is calm low-detail wall or atmosphere for diary content; BOTH characters and the activity together on RIGHT third, heads at similar vertical level around 65% image height, characters fully visible. Works as a shallow mobile crop around 72% height. No text, letters, logos, UI, border, collage, watermark.  Character scale acceptance rule: Both characters are tiny same-age companions of nearly identical size. The panda girl is only barely smaller: target 95-98% of the pig boy in equivalent standing height and head diameter at the same depth. No adult-child size difference. Validate visually after generation.",
   "scenes": [
     {
       "id": "rainy-reading",
@@ -33,5 +33,6 @@
       "title": "各自的小日子",
       "description": "A small fluffy black-and-white panda waters a potted fern with a little watering can while a small round pink pig sits nearby writing in a notebook with a pencil. They are each doing their own activity in the same cozy cottage corner, glancing affectionately toward one another. Terracotta orange, sage green, warm ivory. Peaceful everyday companionship."
     }
-  ]
+  ],
+  "characterScaleRule": "Both characters are tiny same-age companions of nearly identical size. The panda girl is only barely smaller: target 95-98% of the pig boy in equivalent standing height and head diameter at the same depth. No adult-child size difference. Validate visually after generation."
 }
