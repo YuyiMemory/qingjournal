@@ -479,6 +479,54 @@ export const scenes = [
     "season": 2,
     "time": 3,
     "position": "82% 50%"
+  },
+  {
+    "id": "cookie-caught",
+    "title": "偷吃被發現",
+    "caption": "被發現了，也想分你一口",
+    "season": 0,
+    "time": 2,
+    "position": "82% 50%"
+  },
+  {
+    "id": "milk-foam-nose",
+    "title": "鼻尖的奶泡",
+    "caption": "你鼻子上，有一朵小白雲",
+    "season": 0,
+    "time": 2,
+    "position": "82% 50%"
+  },
+  {
+    "id": "tangled-yarn-duo",
+    "title": "毛線纏住我們",
+    "caption": "繞了一圈，還是在一起",
+    "season": 0,
+    "time": 2,
+    "position": "82% 50%"
+  },
+  {
+    "id": "runaway-hat",
+    "title": "追一頂小帽子",
+    "caption": "風把今天吹得好有趣",
+    "season": 0,
+    "time": 2,
+    "position": "82% 50%"
+  },
+  {
+    "id": "pancake-surprise",
+    "title": "鬆餅翻面大作戰",
+    "caption": "小小失誤，大大的笑聲",
+    "season": 0,
+    "time": 2,
+    "position": "82% 50%"
+  },
+  {
+    "id": "pillow-feather",
+    "title": "枕頭裡的小雪花",
+    "caption": "原來快樂，也會輕輕飄",
+    "season": 0,
+    "time": 2,
+    "position": "82% 50%"
   }
 ];
 

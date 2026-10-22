@@ -1,0 +1,73 @@
+{
+  "generator": "Built-in image_gen",
+  "defaultStyle": "Default medium for scenes without an explicit medium: soft painterly storybook environment, believable velvety plush fur on the two tiny animal companions, gentle cinematic natural lighting and tactile cottage textures. If a scene explicitly specifies watercolor, pencil, paper-cut, clay, gouache or pastel, fully follow that medium instead of realistic fur.",
+  "basePrompt": "Use case: illustration-story. One landscape 3:2 background illustration for a cozy diary website, full-bleed single scene. Character bible: one tiny round pink pig BOY and one tiny black-and-white panda GIRL (not red panda). Both are miniature plush-like companions with short limbs, round bodies and expressive soft faces; nearly equal body sizes, panda only about 10% smaller than pig in head and body at the same depth. Neither is an adult large animal. Equal companions with reciprocal affection and playful expressions, no parent-child dynamic, no exaggerated eyelashes or gender accessories. Layout: keep the LEFT HALF quiet and low-detail for diary overlay. Both characters and their main interaction together in the RIGHT 40%, heads at similar height around 50-60% of canvas height; complete small bodies about 30% of canvas height. Keep faces close together and readable in a shallow phone banner crop. No letters, writing, signage text, numbers, watermark, logos, UI, borders, collage. ",
+  "scenes": [
+    {
+      "id": "cookie-caught",
+      "title": "偷吃被發現",
+      "caption": "被發現了，也想分你一口",
+      "description": "Pig boy is caught nibbling a cookie with tiny crumbs on his snout; panda girl gently points at the crumbs with an amused knowing smile while he sheepishly offers her half. Cozy cottage pantry. Soft mint, pale coral, fresh daylight.",
+      "group": "mischief",
+      "groupTitle": "調皮小意外",
+      "season": 0,
+      "time": 2,
+      "position": "82% 50%"
+    },
+    {
+      "id": "milk-foam-nose",
+      "title": "鼻尖的奶泡",
+      "caption": "你鼻子上，有一朵小白雲",
+      "description": "Panda girl has a small dot of milk foam on her nose; pig boy giggles warmly while offering a tiny cloth, panda smiles in surprised embarrassment. Tiny cups on a cottage breakfast table. Cool sky blue, creamy white and berry pink.",
+      "group": "mischief",
+      "groupTitle": "調皮小意外",
+      "season": 0,
+      "time": 2,
+      "position": "82% 50%"
+    },
+    {
+      "id": "tangled-yarn-duo",
+      "title": "毛線纏住我們",
+      "caption": "繞了一圈，還是在一起",
+      "description": "Both tiny companions sit side by side with a loose harmless loop of colorful yarn draped around their paws, laughing as they patiently untangle it together. Lilac and dusty teal, cozy craft nook, soft afternoon.",
+      "group": "mischief",
+      "groupTitle": "調皮小意外",
+      "season": 0,
+      "time": 2,
+      "position": "82% 50%"
+    },
+    {
+      "id": "runaway-hat",
+      "title": "追一頂小帽子",
+      "caption": "風把今天吹得好有趣",
+      "description": "They scamper side by side along a cottage meadow path reaching for one small straw hat tumbling a short distance ahead in a playful breeze. Fresh blue sky, clover green and peach, lively wide scene.",
+      "group": "mischief",
+      "groupTitle": "調皮小意外",
+      "season": 0,
+      "time": 2,
+      "position": "82% 50%"
+    },
+    {
+      "id": "pancake-surprise",
+      "title": "鬆餅翻面大作戰",
+      "caption": "小小失誤，大大的笑聲",
+      "description": "Pig holds a tiny frying pan after flipping one pancake slightly sideways; panda beside him holds a plate trying to catch it, both laughing with surprise. Small pancake suspended between them, no dangerous fire. Pale lemon and soft aqua cottage kitchen.",
+      "group": "mischief",
+      "groupTitle": "調皮小意外",
+      "season": 0,
+      "time": 2,
+      "position": "82% 50%"
+    },
+    {
+      "id": "pillow-feather",
+      "title": "枕頭裡的小雪花",
+      "caption": "原來快樂，也會輕輕飄",
+      "description": "They look surprised then delighted at a few soft feathers drifting from a small cushion with a loose seam, pig holds cushion while panda catches one feather. Cream and pale lavender cottage sofa, whimsical afternoon.",
+      "group": "mischief",
+      "groupTitle": "調皮小意外",
+      "season": 0,
+      "time": 2,
+      "position": "82% 50%"
+    }
+  ]
+}
