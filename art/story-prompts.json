@@ -68,6 +68,72 @@
       "season": 0,
       "time": 2,
       "position": "82% 50%"
+    },
+    {
+      "id": "drying-fluffy-hair",
+      "title": "擦乾小腦袋",
+      "caption": "把雨天留下的涼意擦掉",
+      "description": "Both sit upright at the same level; pig gently pats panda's damp head with a little soft towel while panda holds a second towel ready for him. No human hair, just fluffy fur. Cool rain outside and warm cream inside, pale blue and apricot.",
+      "group": "care",
+      "groupTitle": "互相照顧",
+      "season": 3,
+      "time": 2,
+      "position": "82% 50%"
+    },
+    {
+      "id": "little-bandage",
+      "title": "貼一點溫柔",
+      "caption": "小小的痛，也有人在意",
+      "description": "Panda carefully applies one tiny plain bandage to pig's offered paw, no blood or visible wound; pig smiles appreciatively, both equally small. Cottage window seat, soft sage and warm ivory, quiet gentle light.",
+      "group": "care",
+      "groupTitle": "互相照顧",
+      "season": 3,
+      "time": 2,
+      "position": "82% 50%"
+    },
+    {
+      "id": "sleepy-blanket",
+      "title": "替你蓋好被子",
+      "caption": "你安心睡，我輕輕陪著",
+      "description": "Pig dozes curled on a small cushion while panda gently pulls a light blanket over his shoulders, both nearly equal in body size. Cozy reading nook, muted periwinkle, cream and a single amber lamp.",
+      "group": "care",
+      "groupTitle": "互相照顧",
+      "season": 3,
+      "time": 2,
+      "position": "82% 50%"
+    },
+    {
+      "id": "warm-congee",
+      "title": "一碗暖暖的粥",
+      "caption": "把關心盛進小碗裡",
+      "description": "Pig sets a small warm bowl of rice congee on a low table in front of panda, who holds a spoon and smiles; both seated beside each other, equal companions. Muted terracotta, pale jade and ivory, gentle steam.",
+      "group": "care",
+      "groupTitle": "互相照顧",
+      "season": 3,
+      "time": 2,
+      "position": "82% 50%"
+    },
+    {
+      "id": "scarf-tidy",
+      "title": "圍巾整理好了",
+      "caption": "出門以前，再多一點溫暖",
+      "description": "Panda gently straightens pig's small knitted scarf while he holds her matching mittens, both standing at the same depth. Snowy cottage doorstep, dusty blue, cranberry and soft white.",
+      "group": "care",
+      "groupTitle": "互相照顧",
+      "season": 3,
+      "time": 2,
+      "position": "82% 50%"
+    },
+    {
+      "id": "warming-paws",
+      "title": "一起暖暖手",
+      "caption": "冷冷的天，有暖暖的你",
+      "description": "Pig and panda sit shoulder to shoulder holding their paws around the same small warm ceramic mug, content quiet smiles. Soft snowfall beyond window. Muted plum, oatmeal and warm amber, intimate winter evening.",
+      "group": "care",
+      "groupTitle": "互相照顧",
+      "season": 3,
+      "time": 2,
+      "position": "82% 50%"
     }
   ]
 }

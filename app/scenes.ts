@@ -527,6 +527,54 @@ export const scenes = [
     "season": 0,
     "time": 2,
     "position": "82% 50%"
+  },
+  {
+    "id": "drying-fluffy-hair",
+    "title": "擦乾小腦袋",
+    "caption": "把雨天留下的涼意擦掉",
+    "season": 3,
+    "time": 2,
+    "position": "82% 50%"
+  },
+  {
+    "id": "little-bandage",
+    "title": "貼一點溫柔",
+    "caption": "小小的痛，也有人在意",
+    "season": 3,
+    "time": 2,
+    "position": "82% 50%"
+  },
+  {
+    "id": "sleepy-blanket",
+    "title": "替你蓋好被子",
+    "caption": "你安心睡，我輕輕陪著",
+    "season": 3,
+    "time": 2,
+    "position": "82% 50%"
+  },
+  {
+    "id": "warm-congee",
+    "title": "一碗暖暖的粥",
+    "caption": "把關心盛進小碗裡",
+    "season": 3,
+    "time": 2,
+    "position": "82% 50%"
+  },
+  {
+    "id": "scarf-tidy",
+    "title": "圍巾整理好了",
+    "caption": "出門以前，再多一點溫暖",
+    "season": 3,
+    "time": 2,
+    "position": "82% 50%"
+  },
+  {
+    "id": "warming-paws",
+    "title": "一起暖暖手",
+    "caption": "冷冷的天，有暖暖的你",
+    "season": 3,
+    "time": 2,
+    "position": "82% 50%"
   }
 ];
 
