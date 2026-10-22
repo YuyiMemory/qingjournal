@@ -671,6 +671,54 @@ export const scenes = [
     "season": 0,
     "time": 2,
     "position": "82% 50%"
+  },
+  {
+    "id": "same-little-gift",
+    "title": "原來你也準備了",
+    "caption": "一樣的小心意，兩倍的開心",
+    "season": 2,
+    "time": 3,
+    "position": "82% 50%"
+  },
+  {
+    "id": "dozing-together",
+    "title": "一起打瞌睡",
+    "caption": "連晚安，都剛好同一個節奏",
+    "season": 2,
+    "time": 3,
+    "position": "82% 50%"
+  },
+  {
+    "id": "window-wave",
+    "title": "隔著窗戶揮揮手",
+    "caption": "還沒見面，就先笑了",
+    "season": 2,
+    "time": 3,
+    "position": "82% 50%"
+  },
+  {
+    "id": "record-listening",
+    "title": "一起聽一面唱片",
+    "caption": "這首歌，留給有你的晚上",
+    "season": 2,
+    "time": 3,
+    "position": "82% 50%"
+  },
+  {
+    "id": "little-paw-promise",
+    "title": "小爪爪的約定",
+    "caption": "不用說很多，也懂你的心意",
+    "season": 2,
+    "time": 3,
+    "position": "82% 50%"
+  },
+  {
+    "id": "notebook-exchange",
+    "title": "交換今天的小日子",
+    "caption": "你的今天，我也想聽",
+    "season": 2,
+    "time": 3,
+    "position": "82% 50%"
   }
 ];
 
