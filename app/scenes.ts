@@ -710,7 +710,7 @@ export const scenes = [
     "caption": "不用說很多，也懂你的心意",
     "season": 2,
     "time": 3,
-    "position": "82% 50%"
+    "position": "82% 70%"
   },
   {
     "id": "notebook-exchange",
@@ -718,6 +718,54 @@ export const scenes = [
     "caption": "你的今天，我也想聽",
     "season": 2,
     "time": 3,
+    "position": "82% 50%"
+  },
+  {
+    "id": "watercolor-rain-walk",
+    "title": "水彩裡的小雨天",
+    "caption": "讓雨滴，暈成溫柔的顏色",
+    "season": 0,
+    "time": 2,
+    "position": "82% 64%"
+  },
+  {
+    "id": "pencil-baking-hearts",
+    "title": "色鉛筆的小餅乾",
+    "caption": "一筆一畫，都是甜甜的日常",
+    "season": 0,
+    "time": 2,
+    "position": "82% 50%"
+  },
+  {
+    "id": "paper-cut-moonboat",
+    "title": "紙雕月光船",
+    "caption": "把月光，一層一層疊起來",
+    "season": 0,
+    "time": 2,
+    "position": "82% 50%"
+  },
+  {
+    "id": "clay-reading-nook",
+    "title": "黏土的小書房",
+    "caption": "把陪伴，捏成圓圓的樣子",
+    "season": 0,
+    "time": 2,
+    "position": "82% 50%"
+  },
+  {
+    "id": "gouache-garden",
+    "title": "不透明水彩的花園",
+    "caption": "把春天，塗得飽滿一點",
+    "season": 0,
+    "time": 2,
+    "position": "82% 50%"
+  },
+  {
+    "id": "pastel-star-window",
+    "title": "粉彩的星空窗邊",
+    "caption": "晚安，留一點星光給你",
+    "season": 0,
+    "time": 2,
     "position": "82% 50%"
   }
 ];
