@@ -62,4 +62,15 @@ function App() {
     <small>日記會在密碼驗證成功後才載入。<br />此裝置會保持登入 30 天；手動鎖上小屋會立即清除憑證。</small>
   </form></main>;
 }
-createRoot(document.getElementById('root')!).render(<App />);
+// Set to false and redeploy when the cottage is ready to reopen.
+const maintenanceMode = true;
+function Maintenance() {
+  return <main className="password-screen"><section className="password-card" aria-labelledby="maintenance-title">
+    <span className="password-symbol" aria-hidden="true">⌂</span>
+    <h1 id="maintenance-title">小屋整修中</h1>
+    <p>正在整理小屋，也為回憶留一個更舒服的位置。<br />整修期間暫停登入與閱讀，謝謝你的耐心等候。</p>
+    <small>等小屋準備好了，再邀你回來坐坐。<br />留一盞燈，等你回來。</small>
+  </section></main>;
+}
+// Gate before mounting App: saved sessions must not bypass the notice.
+createRoot(document.getElementById('root')!).render(maintenanceMode ? <Maintenance /> : <App />);
