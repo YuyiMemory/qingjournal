@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import Writer from './writer';
+import MoodCorner from './mood';
 import { dateLabels, localToday, RichText, type DiaryEntry } from './diary';
 import { api } from '../pages/bridge';
 import { pickScene, sceneInterval, scenes, sceneUrl } from './scenes';
@@ -114,6 +115,7 @@ export default function Home({canWrite=false,onLock=()=>{}}:{canWrite?:boolean;o
   </aside>
   <section ref={journalRef} className="journal" aria-label="日記內容" style={{'--reading-size':`${font}px`} as React.CSSProperties}>
    <header className="journal-toolbar"><div className="mode-switch"><button aria-pressed={mode==='read'} onClick={()=>{setMode('read');setQuery('');if(!shown&&entries[0])setSelected(entries[0].id);}}>閱讀</button>{canWrite&&<button disabled={!writingReady} aria-pressed={mode==='write'} onClick={()=>{if(editing)setMode('write');else startWriting();}}>書寫</button>}</div><div><button aria-label="縮小字體" disabled={font<=16} onClick={()=>setFont(v=>v-1)}>A−</button><button aria-label="放大字體" disabled={font>=26} onClick={()=>setFont(v=>v+1)}>A＋</button><button className="lock-button" onClick={lockCottage}>鎖上小屋</button></div></header>
+   {mode==='read'&&<MoodCorner key={canWrite?'owner':'reader'} role={canWrite?'owner':'reader'} />}
    {canWrite&&hasDrafts&&<section className="draft-warning" aria-label="未同步草稿"><p>{saveState}。草稿未存到硬碟，關閉或重新整理會遺失。</p><button onClick={exportDrafts}>下載草稿備份</button>{saveFailed&&<><button onClick={()=>{paused.current=false;void flush();}}>重試同步</button><button onClick={()=>{if(confirm('確定放棄未同步草稿並讀取試算表最新版？請先下載草稿備份。')){pendingDrafts.clear();setHasDrafts(false);setSaveFailed(false);paused.current=false;setMode('read');setReload(v=>v+1);}}}>放棄草稿，讀取最新版</button></>}</section>}
    {mode==='write'?<><form className="date-create" onSubmit={e=>{e.preventDefault();startWriting();}}><label>選一天寫寫<input type="date" required aria-label="日記日期" value={writeDate} onChange={e=>setWriteDate(e.target.value)}/></label><button disabled={!writingReady}>新增／接著寫</button></form>{editing&&<Writer key={editing.id} entry={editing} status={saveState} onChange={updated=>saveEntries(entries.map(e=>e.id===updated.id?updated:e))}/>}</>:<div className="entries">{visible.map(e=><article className="entry" key={e.id}>
     <header><h1>{e.date}</h1><span>{e.iso.slice(0,4)} · {e.day}</span></header>{e.document?<div className="entry-body rich-text"><RichText document={e.document}/></div>:<p className="entry-body">{e.body}</p>}<p className="entry-note">{e.note}</p>

@@ -63,7 +63,7 @@ function App() {
   </form></main>;
 }
 // Set to false and redeploy when the cottage is ready to reopen.
-const maintenanceMode = true;
+const maintenanceMode = false;
 function Maintenance() {
   return <main className="password-screen"><section className="password-card" aria-labelledby="maintenance-title">
     <span className="password-symbol" aria-hidden="true">⌂</span>
