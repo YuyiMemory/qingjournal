@@ -9,7 +9,7 @@
     "dev": "vite --config vite.pages.config.ts",
     "build": "vite build --config vite.pages.config.ts",
     "preview": "vite preview --config vite.pages.config.ts",
-    "test": "node google-drive/pages.test.cjs"
+    "test": "node google-drive/pages.test.cjs && node google-drive/moods.test.cjs"
   },
   "dependencies": {
     "@tiptap/pm": "^3.31.3",

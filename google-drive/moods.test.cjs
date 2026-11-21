@@ -1,0 +1,30 @@
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict'),crypto=require('node:crypto');
+const source=fs.readFileSync(__dirname+'/Pages.gs','utf8');
+const props={COTTAGE_READER_PASSWORD:'reader-test',COTTAGE_OWNER_PASSWORD:'owner-test',COTTAGE_BRIDGE_SECRET:'key',COTTAGE_OWNER_ID:'owner',COTTAGE_SHEET_ID:'test'};
+let writes=0;
+const ctx=vm.createContext({PropertiesService:{getScriptProperties:()=>({getProperty:k=>props[k]||null,setProperty:(k,v)=>{props[k]=v;writes++;}})},
+ Utilities:{getUuid:()=>crypto.randomUUID(),base64EncodeWebSafe:v=>Buffer.from(v).toString('base64url'),base64DecodeWebSafe:v=>Buffer.from(v,'base64url'),newBlob:v=>({getDataAsString:()=>Buffer.from(v).toString()}),computeHmacSha256Signature:(v,k)=>crypto.createHmac('sha256',k).update(v).digest()},
+ LockService:{getScriptLock:()=>({tryLock:()=>true,hasLock:()=>true,releaseLock:()=>{}})} });
+vm.runInContext(source,ctx);
+const call=input=>JSON.parse(JSON.stringify(ctx.cottageRequest(input)));
+for(const action of ['read-moods','save-mood','react-mood'])assert.equal(call({action}).status,401);
+const owner=call({action:'login',role:'owner',password:props.COTTAGE_OWNER_PASSWORD}).data.token;
+const reader=call({action:'login',role:'reader',password:props.COTTAGE_READER_PASSWORD}).data.token;
+assert.deepEqual(call({action:'read-moods',token:reader}).data.feelings,[null,null]);
+const save={action:'save-mood',token:owner,mood:2,need:'想抱抱',version:0,requestId:'owner-request-1'};
+assert.equal(call(save).status,200);
+const after=writes;assert.equal(call(save).status,200);assert.equal(writes,after,'retry is idempotent');
+assert.equal(call({...save,requestId:'owner-request-2'}).status,409,'stale device cannot overwrite');
+for(const invalid of [{mood:9},{mood:1.5},{need:'arbitrary'}])assert.equal(call({...save,...invalid,version:1,requestId:'invalid-request'}).status,400);
+let result=call({...save,token:reader,role:'owner',mood:1,requestId:'reader-request-1'});
+assert.equal(result.data.feelings[0].mood,2,'role spoof cannot overwrite partner');assert.equal(result.data.feelings[1].mood,1);
+result=call({action:'react-mood',token:reader,reaction:'我在',version:1,requestId:'reaction-request-1'});
+assert.equal(result.data.feelings[0].reaction,'我在');assert.equal(result.data.feelings[1].reaction,'');
+assert.equal(call({...save,version:1,requestId:'owner-request-3'}).status,200);
+assert.equal(call({action:'react-mood',token:reader,reaction:'抱抱你',version:1,requestId:'reaction-request-2'}).status,409);
+assert.equal(call({action:'read-moods',token:reader}).data.feelings[0].reaction,'','new mood clears old reaction');
+const snapshot=call({action:'read-moods',token:reader});assert.ok(!JSON.stringify(snapshot).includes('requestId'));
+const persisted=JSON.parse(props.COTTAGE_MOODS_V1);
+assert.equal(persisted.owner.version,2);assert.equal(persisted.reader.mood,1);
+assert.equal(persisted.owner.reaction,'');
+console.log('PASS: mood authentication, role ownership, durability, retry deduplication, validation, conflicts and stale reactions.');

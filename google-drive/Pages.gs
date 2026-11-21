@@ -107,6 +107,7 @@ function cottageRequest(input){
     const session=input.action==='login'?null:authenticate_(input.token,c);
     lock=LockService.getScriptLock();if(!lock.tryLock(10000))fail_('同步忙碌中，請稍後再試。',503);
     if(input.action==='login')return login_(input,c);
+    if(['read-moods','save-mood','react-mood'].includes(input.action))return moods_(input,c,session);
     const isOwner=session.role==='owner';
     if(input.action==='save-diaries'&&!isOwner)fail_('只有主人可以修改日記。',403);
     const book=SpreadsheetApp.openById(c.sheet),diarySheet=book.getSheetByName(PAGES_TABS.diaries),diaries=rows_(diarySheet,12);
@@ -168,4 +169,31 @@ function cottageRequest(input){
     fail_('不支援的操作。',400);
   }catch(error){return {status:error.status||503,data:{error:error.status?error.message:'Google 服務暫時無法使用，請稍後再試。'}};}
   finally{if(lock&&lock.hasLock())lock.releaseLock();}
+}
+
+// Internal helpers for the authenticated cottageRequest dispatcher.
+// Two bounded latest-state records; no history, passwords or tokens are stored here.
+function moods_(input,c,session){
+  const key='COTTAGE_MOODS_V1';
+  const state=JSON.parse(c.p.getProperty(key)||'{"owner":null,"reader":null}');
+  function snapshot(){return reply_({feelings:[state.owner,state.reader].map(v=>v?{mood:v.mood,need:v.need,at:v.at,version:v.version,reaction:v.reaction||''}:null)});}
+  if(input.action==='read-moods')return snapshot();
+  if(!text_(input.requestId,80)||!/^[a-zA-Z0-9-]{8,80}$/.test(input.requestId)||!Number.isInteger(input.version)||input.version<0)fail_('心情請求格式不正確。',400);
+  const own=session.role,other=own==='owner'?'reader':'owner';
+  if(input.action==='save-mood'){
+    if(!Number.isInteger(input.mood)||input.mood<0||input.mood>5||!['','想抱抱','想聊聊','想靜靜'].includes(input.need))fail_('請選擇有效的心情與陪伴方式。',400);
+    const previous=state[own];
+    if(previous&&previous.requestId===input.requestId)return snapshot();
+    if(input.version!==(previous?previous.version:0))fail_('另一個裝置已更新你的心情，已重新讀取，請再選一次。',409);
+    state[own]={mood:input.mood,need:input.need,at:Date.now(),version:input.version+1,requestId:input.requestId,reaction:''};
+  }else if(input.action==='react-mood'){
+    if(!['抱抱你','我在'].includes(input.reaction))fail_('請選擇有效的回應。',400);
+    const target=state[other];
+    if(!target)fail_('對方還沒有分享心情。',409);
+    if(target.version!==input.version)fail_('對方剛更新了心情，已重新讀取，請再回應一次。',409);
+    if(target.reactionRequestId===input.requestId)return snapshot();
+    target.reaction=input.reaction;target.reactionRequestId=input.requestId;
+  }else fail_('不支援的心情操作。',400);
+  c.p.setProperty(key,JSON.stringify(state));
+  return snapshot();
 }
